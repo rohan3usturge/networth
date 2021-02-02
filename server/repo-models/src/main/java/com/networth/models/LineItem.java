@@ -4,13 +4,11 @@ public class LineItem {
 
 	private String id;
 	private String name;
-	private String description;
-	private double amount;
+	private Double amount;
 
-	public LineItem(String id, String name, String description, double amount) {
+	public LineItem(String id, String name, Double amount) {
 		this.id = id;
 		this.name = name;
-		this.description = description;
 		this.amount = amount;
 	}
 
@@ -22,14 +20,6 @@ public class LineItem {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -38,18 +28,17 @@ public class LineItem {
 		this.name = name;
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
 	@Override
 	public String toString() {
-		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", description='" + getDescription() + "'"
-				+ ", amount='" + getAmount() + "'" + "}";
+		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", amount='" + getAmount() + "'" + "}";
 	}
 
 }

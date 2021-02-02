@@ -1,22 +1,38 @@
 package com.networth.svc.models;
 
-import java.util.List;
-
 public class NetWorthDm {
+    private Double totalNetWorth;
+    private Double totalAssets;
+    private Double totalLiabilities;
 
-    private List<LineItemCategoryDm> categories;
-
-    public List<LineItemCategoryDm> getCategories() {
-        return this.categories;
+    public Double getTotalNetWorth() {
+        return this.totalNetWorth;
     }
 
-    public void setCategories(List<LineItemCategoryDm> categories) {
-        this.categories = categories;
+    public void setTotalNetWorth(Double totalNetWorth) {
+        this.totalNetWorth = totalNetWorth;
+    }
+
+    public Double getTotalAssets() {
+        return this.totalAssets;
+    }
+
+    public void setTotalAssets(Double totalAssets) {
+        this.totalAssets = totalAssets;
+    }
+
+    public Double getTotalLiabilities() {
+        return this.totalLiabilities;
+    }
+
+    public void setTotalLiabilities(Double totalLiabilities) {
+        this.totalLiabilities = totalLiabilities;
     }
 
     @Override
     public String toString() {
-        return "{" + " categories='" + getCategories() + "'" + "}";
+        return "{" + " totalNetWorth='" + getTotalNetWorth() + "'" + ", totalAssets='" + getTotalAssets() + "'"
+                + ", totalLiabilities='" + getTotalLiabilities() + "'" + "}";
     }
 
 }

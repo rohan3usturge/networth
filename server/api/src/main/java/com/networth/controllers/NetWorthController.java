@@ -1,8 +1,11 @@
 package com.networth.controllers;
 
-import com.networth.dto.NwCalculateRequestDto;
-import com.networth.infra.mapper.InfraMapper;
+import com.networth.dto.NetWorthRequestDto;
+import com.networth.dto.NetWorthResponseDto;
+import com.networth.svc.CurrencyService;
 import com.networth.svc.NetWorthService;
+import com.networth.svc.models.CurrencyCode;
+import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,22 +19,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class NetWorthController {
 
 	private NetWorthService nwService;
-	private InfraMapper infraMapper;
+	private CurrencyService currencyService;
 
-	public NetWorthController(NetWorthService nwService, InfraMapper infraMapper) {
-		super();
+	public NetWorthController(NetWorthService nwService, CurrencyService currencyService) {
 		this.nwService = nwService;
-		this.infraMapper = infraMapper;
+		this.currencyService = currencyService;
 	}
 
 	@GetMapping()
-	public NetWorthDm getDefaultNetWorth() {
-		return this.nwService.getDefaultNetWorth();
+	public LineItemsContainerDm getLineItemsContainer() {
+		return this.nwService.getLineItemsContainer();
 	}
 
 	@PostMapping()
-	public void calculateNetWorth(@RequestBody NwCalculateRequestDto nwCalculateRequestDto) {
-		NetWorthDm netWorthDm = infraMapper.map(nwCalculateRequestDto, NetWorthDm.class);
-		nwService.calculate(netWorthDm);
+	public NetWorthResponseDto calculateNetWorth(@RequestBody NetWorthRequestDto lineItemsContainer) {
+		CurrencyCode currencyCode = lineItemsContainer.getCurrencyCode();
+		NetWorthDm netWorth = this.nwService.calculate(currencyCode, lineItemsContainer.getLineItems());
+		NetWorthResponseDto responseDto = new NetWorthResponseDto();
+		responseDto.setNetWorthDm(netWorth);
+		responseDto.setCurrencyCode(currencyCode.toString());
+		responseDto.setCurrencySymbol(currencyService.getCurrencySymbol(currencyCode));
+		return responseDto;
+
 	}
 }

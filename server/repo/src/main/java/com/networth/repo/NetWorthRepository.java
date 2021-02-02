@@ -1,9 +1,9 @@
 package com.networth.repo;
 
-import com.networth.models.NetWorth;
+import com.networth.models.LineItemsContainer;
 
 public interface NetWorthRepository {
 
-	NetWorth getDefaultNetWorth();
+	LineItemsContainer getLineItemsContainer();
 
 }

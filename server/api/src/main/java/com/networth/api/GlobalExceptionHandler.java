@@ -38,6 +38,7 @@ public class GlobalExceptionHandler implements Filter {
 		try {
 			chain.doFilter(request, response);
 		} catch (Exception ex) {
+			ex.printStackTrace();
 			String correlationId = httpRequest.getHeader("x-correlation-id");
 			ErrorResponse errorResponse = errorGenerator.convert(ex);
 			ObjectMapper mapper = new ObjectMapper();

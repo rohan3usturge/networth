@@ -4,8 +4,7 @@ public class LineItemDm {
 
 	private String id;
 	private String name;
-	private String description;
-	private double amount;
+	private Double amount;
 
 	public String getId() {
 		return id;
@@ -13,14 +12,6 @@ public class LineItemDm {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getName() {
@@ -31,18 +22,17 @@ public class LineItemDm {
 		this.name = name;
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
 	@Override
 	public String toString() {
-		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", description='" + getDescription() + "'"
-				+ ", amount='" + getAmount() + "'" + "}";
+		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", amount='" + getAmount() + "'" + "}";
 	}
 
 }
