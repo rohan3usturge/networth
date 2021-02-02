@@ -10,5 +10,4 @@ class RepoApplication {
 		SpringApplication.run(RepoApplication.class, args);
 	}
 
-
 }

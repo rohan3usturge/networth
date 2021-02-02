@@ -1,6 +1,8 @@
 package com.networth.infra.mapper;
 
-import java.lang.reflect.Type;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -19,13 +21,9 @@ public class ModelMapperBasedInfraMapper implements InfraMapper {
 		return this.modelMapper.map(source, destinationType);
 	}
 
-	public void map(Object source, Object destination) {
-		this.modelMapper.map(source, destination);
-	}
-
 	@Override
-	public <D> D map(Object source, Type destinationType) {
-		return this.modelMapper.map(source, destinationType);
+	public <D, T> List<D> mapAll(Collection<T> entityList, Class<D> outCLass) {
+		return entityList.stream().map(entity -> map(entity, outCLass)).collect(Collectors.toList());
 	}
 
 }

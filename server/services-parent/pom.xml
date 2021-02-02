@@ -21,8 +21,8 @@
 		<module>../repo-models</module>
 		<module>../svc-models</module>
 		<module>../infra</module>
-		<module>../command-repo</module>
-		<module>../command-svc</module>
-		<module>../command-api</module>
+		<module>../repo</module>
+		<module>../svc</module>
+		<module>../api</module>
 	</modules>
 </project>

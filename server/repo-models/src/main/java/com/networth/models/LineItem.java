@@ -1,11 +1,18 @@
-package com.networth.svc.models;
+package com.networth.models;
 
-public class LineItemDm {
+public class LineItem {
 
 	private String id;
 	private String name;
 	private String description;
 	private double amount;
+
+	public LineItem(String id, String name, String description, double amount) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.amount = amount;
+	}
 
 	public String getId() {
 		return id;

@@ -4,9 +4,19 @@ import java.util.List;
 
 public class LineItemCategoryDm {
 
+	private String name;
+
 	private LineItemCategoryType type;
 
 	private List<LineItemDm> items;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public LineItemCategoryType getType() {
 		return type;
@@ -22,11 +32,6 @@ public class LineItemCategoryDm {
 
 	public void setItems(List<LineItemDm> items) {
 		this.items = items;
-	}
-
-	@Override
-	public String toString() {
-		return "LineItemCategory [type=" + type + ", items=" + items + "]";
 	}
 
 }

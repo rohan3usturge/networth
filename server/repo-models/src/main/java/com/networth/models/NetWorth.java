@@ -1,16 +1,16 @@
-package com.networth.svc.models;
+package com.networth.models;
 
 import java.util.List;
 
-public class NetWorthDm {
+public class NetWorth {
 
-    private List<LineItemCategoryDm> categories;
+    private List<LineItemCategory> categories;
 
-    public List<LineItemCategoryDm> getCategories() {
+    public List<LineItemCategory> getCategories() {
         return this.categories;
     }
 
-    public void setCategories(List<LineItemCategoryDm> categories) {
+    public void setCategories(List<LineItemCategory> categories) {
         this.categories = categories;
     }
 

@@ -1,7 +1,11 @@
 package com.networth.svc;
 
+import com.networth.svc.models.NetWorthDm;
+
 public interface NetWorthService {
 
-	void calculate();
+	NetWorthDm getDefaultNetWorth();
+
+	NetWorthDm calculate(NetWorthDm networthDomainModel);
 
 }
