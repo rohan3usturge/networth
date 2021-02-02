@@ -13,7 +13,8 @@ const Home = ({ networth }) => {
 export default withAppLayout(Home);
 
 export async function getServerSideProps() {
-  const content = await NETWORTH_API.getDefaultNetWorth();
+  const lineItems = await NETWORTH_API.getDefaultLineItems();
+  const netWorth = {};
   return {
     props: {
       networth: content || {},
