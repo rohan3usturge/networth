@@ -1,4 +1,4 @@
-const Liability = ({ liability, onChange }) => {
+const Liability = ({ liability, onChange, disabled }) => {
   const handleChange = (e) => {
     const changed = { ...liability };
     changed.amount = e.target.value;
@@ -13,6 +13,7 @@ const Liability = ({ liability, onChange }) => {
       <td className="col-2">{liability.monthlyPayment}</td>
       <td className="col-8">
         <input
+          disabled={disabled}
           type="number"
           value={liability.lineItem.amount}
           className="form-control"

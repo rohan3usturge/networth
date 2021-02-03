@@ -1,14 +1,20 @@
 package com.networth.dto;
 
-import com.networth.svc.models.LineItemsContainerDm;
+import com.networth.svc.models.PortfolioDm;
 
 public class NetWorthRequestDto {
 
-    private String currencyCode;
-
     private String targetCurrencyCode;
 
-    private LineItemsContainerDm lineItems;
+    private PortfolioDm portfolio;
+
+    public PortfolioDm getPortfolio() {
+        return this.portfolio;
+    }
+
+    public void setPortfolio(PortfolioDm portfolio) {
+        this.portfolio = portfolio;
+    }
 
     public String getTargetCurrencyCode() {
         return this.targetCurrencyCode;
@@ -18,20 +24,10 @@ public class NetWorthRequestDto {
         this.targetCurrencyCode = targetCurrencyCode;
     }
 
-    public String getCurrencyCode() {
-        return this.currencyCode;
-    }
-
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
-    }
-
-    public LineItemsContainerDm getLineItems() {
-        return this.lineItems;
-    }
-
-    public void setLineItems(LineItemsContainerDm lineItems) {
-        this.lineItems = lineItems;
+    @Override
+    public String toString() {
+        return "{" + " targetCurrencyCode='" + getTargetCurrencyCode() + "'" + ", portfolio='" + getPortfolio() + "'"
+                + "}";
     }
 
 }

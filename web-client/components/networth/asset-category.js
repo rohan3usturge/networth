@@ -1,6 +1,6 @@
 import { Asset } from "./asset";
 
-const AssetCategory = ({ category, onChange }) => {
+const AssetCategory = ({ category, onChange, disabled }) => {
   const handleChange = (changedItem) => {
     const changed = { ...category };
     const newItems = category.items.map((item) => {
@@ -32,6 +32,7 @@ const AssetCategory = ({ category, onChange }) => {
               key={item.lineItem.id}
               asset={item}
               onChange={handleChange}
+              disabled={disabled}
             />
           );
         })}

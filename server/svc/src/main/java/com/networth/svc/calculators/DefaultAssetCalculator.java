@@ -3,6 +3,7 @@ package com.networth.svc.calculators;
 import java.util.List;
 
 import com.networth.svc.CurrencyService;
+import com.networth.svc.models.AmountDm;
 import com.networth.svc.models.AssetCategoryDm;
 import com.networth.svc.models.AssetDm;
 import com.networth.svc.models.CalculationContext;
@@ -25,8 +26,11 @@ public class DefaultAssetCalculator implements AssetCalculator {
         for (AssetCategoryDm category : context.getPayload()) {
             for (AssetDm item : category.getItems()) {
                 LineItemDm lineItem = item.getLineItem();
-                Double conversionRate = currencyService.getConversionRate(context.getCurrentCode());
-                totalAssets += lineItem.getAmount() * conversionRate;
+                AmountDm amount = currencyService.convert(lineItem.getAmount(), context.getCurrentCode(),
+                        context.getTargetCurrencyCode());
+                lineItem.setAmount(amount.getValue());
+                lineItem.setDisplayAmount(amount.getDisplayValue());
+                totalAssets += lineItem.getAmount();
             }
         }
         return totalAssets;

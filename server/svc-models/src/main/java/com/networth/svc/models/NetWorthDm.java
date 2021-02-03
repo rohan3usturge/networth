@@ -1,9 +1,9 @@
 package com.networth.svc.models;
 
 public class NetWorthDm {
+
     private String totalNetWorthDisplay;
     private Double totalNetWorth;
-
     private String totalAssetsDisplay;
     private Double totalAssets;
     private String totalLiabilitiesDisplay;
@@ -62,5 +62,4 @@ public class NetWorthDm {
         return "{" + " totalNetWorth='" + getTotalNetWorth() + "'" + ", totalAssets='" + getTotalAssets() + "'"
                 + ", totalLiabilities='" + getTotalLiabilities() + "'" + "}";
     }
-
 }

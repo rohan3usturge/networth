@@ -1,6 +1,6 @@
 import { AssetCategory } from "./asset-category";
 
-const AssetCategoryList = ({ categories, onChange }) => {
+const AssetCategoryList = ({ categories, onChange, disabled, total }) => {
   const handleChange = (changedCategory) => {
     const changed = categories.map((category) => {
       if (category.id === changedCategory.id) {
@@ -17,7 +17,7 @@ const AssetCategoryList = ({ categories, onChange }) => {
   return (
     <>
       <div className="card mb-3">
-        <div className="card-header">ASSETS</div>
+        <div className="card-header">ASSETS {total}</div>
         <div className="card-body">
           {categories.map((category) => {
             return (
@@ -25,6 +25,7 @@ const AssetCategoryList = ({ categories, onChange }) => {
                 key={category.meta.id}
                 category={category}
                 onChange={handleChange}
+                disabled={disabled}
               />
             );
           })}

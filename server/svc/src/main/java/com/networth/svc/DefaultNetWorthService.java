@@ -5,7 +5,7 @@ import com.networth.models.LineItemsContainer;
 import com.networth.repo.NetWorthRepository;
 import com.networth.svc.calculators.NetWorthCalculator;
 import com.networth.svc.models.LineItemsContainerDm;
-import com.networth.svc.models.NetWorthDm;
+import com.networth.svc.models.PortfolioDm;
 
 import org.springframework.stereotype.Service;
 
@@ -24,8 +24,8 @@ public class DefaultNetWorthService implements NetWorthService {
 	}
 
 	@Override
-	public NetWorthDm calculate(String currentCode, LineItemsContainerDm lineItems) {
-		return this.netWorthCalculator.calculate(currentCode, lineItems);
+	public PortfolioDm calculate(String targetCurrencyCode, PortfolioDm portfolio) {
+		return this.netWorthCalculator.calculate(targetCurrencyCode, portfolio);
 	}
 
 	@Override

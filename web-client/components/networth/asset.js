@@ -1,4 +1,4 @@
-const Asset = ({ asset, onChange }) => {
+const Asset = ({ asset, onChange, disabled }) => {
   const handleChange = (e) => {
     const changed = { ...asset };
     changed.amount = e.target.value;
@@ -11,13 +11,19 @@ const Asset = ({ asset, onChange }) => {
     <tr className="d-flex">
       <td className="col-4">{asset.lineItem.name}</td>
       <td className="col-8">
-        <input
-          type="number"
-          value={asset.lineItem.amount}
-          className="form-control"
-          onChange={handleChange}
-          id="liability-amount-input"
-        />
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">$</span>
+          </div>
+          <input
+            disabled={disabled}
+            type="text"
+            value={asset.lineItem.displayAmount}
+            className="form-control"
+            onChange={handleChange}
+            id="liability-amount-input"
+          />
+        </div>
       </td>
     </tr>
   );

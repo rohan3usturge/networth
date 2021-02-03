@@ -6,10 +6,29 @@ import { NETWORTH_API } from "../../apis/networth_api";
 
 const NetWorthContainer = ({ defaultPortfolio }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
+  const [isLoading, setIsLoading] = useState(false);
+
+  function timeout(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
   const fetchNetWorth = async (portfolioRequest) => {
-    const nw = await NETWORTH_API.getNetWorth(portfolioRequest);
-    console.log({ nw });
+    setIsLoading(true);
+    const nw = await NETWORTH_API.getNetWorth({
+      portfolio: {
+        lineItems: portfolioRequest.lineItems,
+        currencyCode: portfolioRequest.currencyCode,
+      },
+      targetCurrencyCode: portfolioRequest.targetCurrencyCode,
+    });
+    await timeout(1500);
+    setIsLoading(false);
+    setPortfolio({
+      currencyCode: nw.portfolio.currencyCode,
+      targetCurrencyCode: nw.portfolio.currencyCode,
+      lineItems: nw.portfolio.lineItems,
+      netWorth: nw.portfolio.netWorth,
+    });
   };
 
   const handleLiabilitiesChange = (changedL) => {
@@ -35,8 +54,14 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
 
   return (
     <>
-      <div>TARGET - {portfolio.targetCurrencyCode}</div>
-      <div>CURRENT - {portfolio.currencyCode}</div>
+      {isLoading && (
+        <div
+          className="spinner-grow text-primary d-flex justify-content-center"
+          role="status"
+        >
+          <span className="sr-only">Loading...</span>
+        </div>
+      )}
       <CurrencyForm
         selectedCurrency={portfolio.currencyCode}
         currencies={[
@@ -49,10 +74,13 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
       <AssetCategoryList
         categories={portfolio.lineItems.assets}
         onChange={handleAssetChange}
+        disabled={isLoading}
+        total={portfolio.netWorth ? portfolio.netWorth.totalAssets : undefined}
       />
       <LiabilityCategoryList
         categories={portfolio.lineItems.liabilities}
         onChange={handleLiabilitiesChange}
+        disabled={isLoading}
       />
     </>
   );

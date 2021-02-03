@@ -3,6 +3,7 @@ package com.networth.svc.calculators;
 import java.util.List;
 
 import com.networth.svc.CurrencyService;
+import com.networth.svc.models.AmountDm;
 import com.networth.svc.models.CalculationContext;
 import com.networth.svc.models.LiabilityCategoryDm;
 import com.networth.svc.models.LiabilityDm;
@@ -25,8 +26,11 @@ public class DefaultLiabilityCalculator implements LiabilityCalculator {
         for (LiabilityCategoryDm category : context.getPayload()) {
             for (LiabilityDm item : category.getItems()) {
                 LineItemDm lineItem = item.getLineItem();
-                Double conversionRate = currencyService.getConversionRate(context.getCurrentCode());
-                total += lineItem.getAmount() * conversionRate;
+                AmountDm amount = currencyService.convert(lineItem.getAmount(), context.getCurrentCode(),
+                        context.getTargetCurrencyCode());
+                lineItem.setAmount(amount.getValue());
+                lineItem.setDisplayAmount(amount.getDisplayValue());
+                total += lineItem.getAmount();
             }
         }
         return total;

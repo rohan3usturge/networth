@@ -1,32 +1,22 @@
 package com.networth.dto;
 
-import com.networth.svc.models.NetWorthDm;
+import com.networth.svc.models.PortfolioDm;
 
 public class NetWorthResponseDto {
 
-    private NetWorthDm netWorthDm;
+    private PortfolioDm portfolio;
 
-    private String currencyCode;
-
-    public NetWorthDm getNetWorthDm() {
-        return this.netWorthDm;
+    public PortfolioDm getPortfolio() {
+        return this.portfolio;
     }
 
-    public void setNetWorthDm(NetWorthDm netWorthDm) {
-        this.netWorthDm = netWorthDm;
-    }
-
-    public String getCurrencyCode() {
-        return this.currencyCode;
-    }
-
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+    public void setPortfolio(PortfolioDm portfolio) {
+        this.portfolio = portfolio;
     }
 
     @Override
     public String toString() {
-        return "{" + " netWorthDm='" + getNetWorthDm() + "'" + ", currencyCode='" + getCurrencyCode() + "'" + "}";
+        return "{" + " portfolio='" + getPortfolio() + "'" + "}";
     }
 
 }

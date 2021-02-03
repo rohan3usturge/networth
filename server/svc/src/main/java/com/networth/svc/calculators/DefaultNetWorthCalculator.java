@@ -5,8 +5,8 @@ import java.util.List;
 import com.networth.svc.models.AssetCategoryDm;
 import com.networth.svc.models.CalculationContext;
 import com.networth.svc.models.LiabilityCategoryDm;
-import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
+import com.networth.svc.models.PortfolioDm;
 
 import org.springframework.stereotype.Service;
 
@@ -22,20 +22,30 @@ public class DefaultNetWorthCalculator implements NetWorthCalculator {
     }
 
     @Override
-    public NetWorthDm calculate(String currentCode, LineItemsContainerDm container) {
+    public PortfolioDm calculate(String targetCurrencyCode, PortfolioDm portfolio) {
         NetWorthDm netWorthDm = new NetWorthDm();
-        CalculationContext<List<AssetCategoryDm>> assetContext = new CalculationContext<>(currentCode,
-                container.getAssets());
-        CalculationContext<List<LiabilityCategoryDm>> liabilityContext = new CalculationContext<>(currentCode,
-                container.getLiabilities());
-        Double totalAssets = assetCalculator.calculate(assetContext);
-        Double totalLiabilities = liabilityCalculator.calculate(liabilityContext);
+        Double totalAssets = processAssets(targetCurrencyCode, portfolio);
+        Double totalLiabilities = processLiabilities(targetCurrencyCode, portfolio);
         Double totalNetWorth = totalAssets + totalLiabilities;
         netWorthDm.setTotalAssets(totalAssets);
         netWorthDm.setTotalNetWorth(totalNetWorth);
         netWorthDm.setTotalLiabilities(totalLiabilities);
-        return netWorthDm;
+        portfolio.setNetWorth(netWorthDm);
+        portfolio.setCurrencyCode(targetCurrencyCode);
+        return portfolio;
 
+    }
+
+    private Double processAssets(String targetCurrencyCode, PortfolioDm portfolio) {
+        CalculationContext<List<AssetCategoryDm>> assetContext = new CalculationContext<>(portfolio.getCurrencyCode(),
+                targetCurrencyCode, portfolio.getLineItems().getAssets());
+        return assetCalculator.calculate(assetContext);
+    }
+
+    private Double processLiabilities(String targetCurrencyCode, PortfolioDm portfolio) {
+        CalculationContext<List<LiabilityCategoryDm>> liabilityContext = new CalculationContext<>(
+                portfolio.getCurrencyCode(), targetCurrencyCode, portfolio.getLineItems().getLiabilities());
+        return liabilityCalculator.calculate(liabilityContext);
     }
 
 }

@@ -1,6 +1,6 @@
 import { Liability } from "./liability";
 
-const LiablityCategory = ({ category, onChange }) => {
+const LiablityCategory = ({ category, onChange, disabled }) => {
   const handleChange = (changedItem) => {
     const changed = { ...category };
     const newItems = category.items.map((item) => {
@@ -33,6 +33,7 @@ const LiablityCategory = ({ category, onChange }) => {
               key={item.lineItem.id}
               liability={item}
               onChange={handleChange}
+              disabled={disabled}
             />
           );
         })}

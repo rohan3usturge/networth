@@ -1,8 +1,7 @@
 package com.networth.svc.calculators;
 
-import com.networth.svc.models.LineItemsContainerDm;
-import com.networth.svc.models.NetWorthDm;
+import com.networth.svc.models.PortfolioDm;
 
 public interface NetWorthCalculator {
-    public NetWorthDm calculate(String currentCode, LineItemsContainerDm container);
+    public PortfolioDm calculate(String targetCurrencyCode, PortfolioDm portfolio);
 }
