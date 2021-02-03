@@ -8,21 +8,19 @@ const Liability = ({ liability, onChange }) => {
   };
 
   return (
-    <li className="list-group-item">
-      <div className="form-group row">
-        <label className="col-md-2" htmlFor="liability-amount-input ">
-          {liability.lineItem.name}
-        </label>
-        <span className="col-md-2">{liability.monthlyPayment}</span>
+    <tr className="d-flex">
+      <td className="col-2">{liability.lineItem.name}</td>
+      <td className="col-2">{liability.monthlyPayment}</td>
+      <td className="col-8">
         <input
           type="number"
           value={liability.lineItem.amount}
-          className="form-control col-md-8"
+          className="form-control"
           onChange={handleChange}
           id="liability-amount-input"
         />
-      </div>
-    </li>
+      </td>
+    </tr>
   );
 };
 

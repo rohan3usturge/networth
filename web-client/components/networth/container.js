@@ -2,26 +2,35 @@ import { CurrencyForm } from "./../currency/currency-form";
 import { AssetCategoryList } from "./asset-category-list";
 import { LiabilityCategoryList } from "./liability-category-list";
 import { useState } from "react";
+import { NETWORTH_API } from "../../apis/networth_api";
 
 const NetWorthContainer = ({ defaultPortfolio }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
 
+  const fetchNetWorth = async (portfolioRequest) => {
+    const nw = await NETWORTH_API.getNetWorth(portfolioRequest);
+    console.log({ nw });
+  };
+
   const handleLiabilitiesChange = (changedL) => {
     const changed = { ...portfolio };
-    changed.liabilities = changedL;
+    changed.lineItems.liabilities = changedL;
     setPortfolio(changed);
+    fetchNetWorth(changed);
   };
 
   const handleAssetChange = (changedA) => {
     const changed = { ...portfolio };
-    changed.assets = changedA;
+    changed.lineItems.assets = changedA;
     setPortfolio(changed);
+    fetchNetWorth(changed);
   };
 
   const handleCurrencyChange = (changedC) => {
     const changed = { ...portfolio };
     changed.targetCurrencyCode = changedC;
     setPortfolio(changed);
+    fetchNetWorth(changed);
   };
 
   return (
@@ -38,11 +47,11 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
         onChange={handleCurrencyChange}
       />
       <AssetCategoryList
-        categories={portfolio.assets}
+        categories={portfolio.lineItems.assets}
         onChange={handleAssetChange}
       />
       <LiabilityCategoryList
-        categories={portfolio.liabilities}
+        categories={portfolio.lineItems.liabilities}
         onChange={handleLiabilitiesChange}
       />
     </>

@@ -8,22 +8,18 @@ const Asset = ({ asset, onChange }) => {
   };
 
   return (
-    <>
-      <li className="list-group-item">
-        <div className="form-group row">
-          <label className="col-md-2" htmlFor="asset-amount-input">
-            {asset.lineItem.name}
-          </label>
-          <input
-            type="number"
-            value={asset.lineItem.amount}
-            className="form-control col-md-8"
-            onChange={handleChange}
-            id="asset-amount-input"
-          />
-        </div>
-      </li>
-    </>
+    <tr className="d-flex">
+      <td className="col-4">{asset.lineItem.name}</td>
+      <td className="col-8">
+        <input
+          type="number"
+          value={asset.lineItem.amount}
+          className="form-control"
+          onChange={handleChange}
+          id="liability-amount-input"
+        />
+      </td>
+    </tr>
   );
 };
 

@@ -50,6 +50,7 @@ public class DefaultNetWorthRepository implements NetWorthRepository {
                     LiabilityBuilder lBuilder = new LiabilityBuilder();
                     lBuilder.name("Liablitity  -" + j);
                     lBuilder.amount(new Random().nextDouble());
+                    lBuilder.monthlyPayment(0.2323);
                     Liability liablity = lBuilder.build();
                     lCategoryBuilder.addItem(liablity);
                 }

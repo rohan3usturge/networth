@@ -16,14 +16,27 @@ const AssetCategory = ({ category, onChange }) => {
   };
 
   return (
-    <div className="mb-3">
-      <div className="h6">{category.meta.name}</div>
-      <ul className="list-group list-group-flush">
+    <table className="table table-borderless">
+      <thead>
+        <tr className="d-flex">
+          <th scope="col" className="col-4">
+            {category.meta.name}
+          </th>
+          <th className="col-8"></th>
+        </tr>
+      </thead>
+      <tbody>
         {category.items.map((item) => {
-          return <Asset key={item.id} asset={item} onChange={handleChange} />;
+          return (
+            <Asset
+              key={item.lineItem.id}
+              asset={item}
+              onChange={handleChange}
+            />
+          );
         })}
-      </ul>
-    </div>
+      </tbody>
+    </table>
   );
 };
 

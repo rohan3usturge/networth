@@ -17,7 +17,7 @@ const LiabilityCategoryList = ({ categories, onChange }) => {
   return (
     <>
       <div className="card  mb-3">
-        <div className="card-header">categories</div>
+        <div className="card-header">LIABILITIES</div>
         <div className="card-body">
           {categories.map((category) => {
             return (

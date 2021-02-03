@@ -13,8 +13,16 @@ const Home = ({ portfolio }) => {
 export default withAppLayout(Home);
 
 export async function getServerSideProps() {
-  const portfolio = await NETWORTH_API.getDefaultLineItems();
-  portfolio.currencyCode = "INR";
+  const lineItems = await NETWORTH_API.getDefaultLineItems();
+  const currencyCode = "CAD";
+  const targetCurrencyCode = "CAD";
+
+  const portfolio = {
+    currencyCode,
+    targetCurrencyCode,
+    lineItems,
+  };
+
   return {
     props: {
       portfolio: portfolio || {},

@@ -4,11 +4,11 @@ public class Liability {
 
     private LineItem lineItem;
 
-    private Double mothlyPayment;
+    private Double monthlyPayment;
 
-    public Liability(LineItem lineItem, Double mothlyPayment) {
+    public Liability(LineItem lineItem, Double monthlyPayment) {
         this.lineItem = lineItem;
-        this.mothlyPayment = mothlyPayment;
+        this.monthlyPayment = monthlyPayment;
     }
 
     public LineItem getLineItem() {
@@ -19,17 +19,17 @@ public class Liability {
         this.lineItem = lineItem;
     }
 
-    public Double getMothlyPayment() {
-        return this.mothlyPayment;
+    public Double getMonthlyPayment() {
+        return this.monthlyPayment;
     }
 
-    public void setMothlyPayment(Double mothlyPayment) {
-        this.mothlyPayment = mothlyPayment;
+    public void setMonthlyPayment(Double monthlyPayment) {
+        this.monthlyPayment = monthlyPayment;
     }
 
     @Override
     public String toString() {
-        return "{" + " lineItem='" + getLineItem() + "'" + ", mothlyPayment='" + getMothlyPayment() + "'" + "}";
+        return "{" + " lineItem='" + getLineItem() + "'" + ", monthlyPayment='" + getMonthlyPayment() + "'" + "}";
     }
 
 }
