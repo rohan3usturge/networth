@@ -2,10 +2,10 @@ import { NETWORTH_API } from "../apis/networth_api";
 import withAppLayout from "../components/layout/app-layout";
 import { NetWorthContainer } from "../components/networth/container";
 
-const Home = ({ networth }) => {
+const Home = ({ portfolio }) => {
   return (
     <div>
-      <NetWorthContainer defaultNetworth={networth} />
+      <NetWorthContainer defaultPortfolio={portfolio} />
     </div>
   );
 };
@@ -13,11 +13,11 @@ const Home = ({ networth }) => {
 export default withAppLayout(Home);
 
 export async function getServerSideProps() {
-  const lineItems = await NETWORTH_API.getDefaultLineItems();
-  const netWorth = {};
+  const portfolio = await NETWORTH_API.getDefaultLineItems();
+  portfolio.currencyCode = "INR";
   return {
     props: {
-      networth: content || {},
+      portfolio: portfolio || {},
     },
   };
 }

@@ -1,36 +1,32 @@
 package com.networth.svc;
 
-import java.util.EnumMap;
-import java.util.Map;
+import java.util.List;
 
-import com.networth.svc.models.CurrencyCode;
+import com.networth.infra.mapper.InfraMapper;
+import com.networth.models.Currency;
+import com.networth.repo.CurrencyRepository;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class DefaultCurrencyService implements CurrencyService {
 
-    private Map<CurrencyCode, Double> exchangeRates;
+    private CurrencyRepository repository;
+    private InfraMapper infraMapper;
 
-    public DefaultCurrencyService() {
-        this.exchangeRates = new EnumMap<>(CurrencyCode.class);
-        this.exchangeRates.put(CurrencyCode.CAD, 1.0);
-        this.exchangeRates.put(CurrencyCode.USD, 0.8);
-        this.exchangeRates.put(CurrencyCode.INR, 50.0);
-        this.exchangeRates.put(CurrencyCode.AUD, 1.1);
-        this.exchangeRates.put(CurrencyCode.NZD, 1.05);
-        this.exchangeRates.put(CurrencyCode.EUR, 0.7);
-        this.exchangeRates.put(CurrencyCode.GBP, 0.5);
+    public DefaultCurrencyService(CurrencyRepository repository, InfraMapper infraMapper) {
+        this.repository = repository;
+        this.infraMapper = infraMapper;
     }
 
     @Override
-    public Double getConversionRate(CurrencyCode targetCurrency) {
-        return this.exchangeRates.getOrDefault(targetCurrency, 1.0);
+    public Double getConversionRate(String targetCurrency) {
+        return 0.9;
     }
 
     @Override
-    public String getCurrencySymbol(CurrencyCode targetCurrency) {
-        return "$";
+    public List<Currency> getAll() {
+        return repository.getAll();
     }
 
 }

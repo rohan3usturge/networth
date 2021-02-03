@@ -16,12 +16,17 @@ public class LiabilityCategoryBuilder {
         this.items = new ArrayList<>();
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
     public void addItem(Liability item) {
         this.items.add(item);
+    }
+
+    public LiabilityCategoryBuilder name(String name) {
+        setName(name);
+        return this;
     }
 
     public LiabilityCategory build() {

@@ -2,9 +2,7 @@ package com.networth.controllers;
 
 import com.networth.dto.NetWorthRequestDto;
 import com.networth.dto.NetWorthResponseDto;
-import com.networth.svc.CurrencyService;
 import com.networth.svc.NetWorthService;
-import com.networth.svc.models.CurrencyCode;
 import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
 
@@ -19,11 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class NetWorthController {
 
 	private NetWorthService nwService;
-	private CurrencyService currencyService;
 
-	public NetWorthController(NetWorthService nwService, CurrencyService currencyService) {
+	public NetWorthController(NetWorthService nwService) {
 		this.nwService = nwService;
-		this.currencyService = currencyService;
 	}
 
 	@GetMapping()
@@ -33,12 +29,11 @@ public class NetWorthController {
 
 	@PostMapping()
 	public NetWorthResponseDto calculateNetWorth(@RequestBody NetWorthRequestDto lineItemsContainer) {
-		CurrencyCode currencyCode = lineItemsContainer.getCurrencyCode();
+		String currencyCode = lineItemsContainer.getCurrencyCode();
 		NetWorthDm netWorth = this.nwService.calculate(currencyCode, lineItemsContainer.getLineItems());
 		NetWorthResponseDto responseDto = new NetWorthResponseDto();
 		responseDto.setNetWorthDm(netWorth);
-		responseDto.setCurrencyCode(currencyCode.toString());
-		responseDto.setCurrencySymbol(currencyService.getCurrencySymbol(currencyCode));
+		responseDto.setCurrencyCode(currencyCode);
 		return responseDto;
 
 	}

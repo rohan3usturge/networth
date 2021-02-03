@@ -17,12 +17,12 @@ public class LineItemsContainerBuilder {
         this.liabilities = new ArrayList<>();
     }
 
-    public LineItemsContainerBuilder addAssetCategory(AssetCategory assetCategory) {
+    public LineItemsContainerBuilder addCategory(AssetCategory assetCategory) {
         this.assets.add(assetCategory);
         return this;
     }
 
-    public LineItemsContainerBuilder addAssetCategory(LiabilityCategory liabilityCategory) {
+    public LineItemsContainerBuilder addCategory(LiabilityCategory liabilityCategory) {
         this.liabilities.add(liabilityCategory);
         return this;
     }

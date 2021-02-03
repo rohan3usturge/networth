@@ -2,20 +2,20 @@ package com.networth.svc.models;
 
 public class CalculationContext<T> {
 
-    private CurrencyCode currentCode;
+    private String currentCode;
 
     private T payload;
 
-    public CalculationContext(CurrencyCode currentCode, T payload) {
+    public CalculationContext(String currentCode, T payload) {
         this.currentCode = currentCode;
         this.payload = payload;
     }
 
-    public CurrencyCode getCurrentCode() {
+    public String getCurrentCode() {
         return this.currentCode;
     }
 
-    public void setCurrentCode(CurrencyCode currentCode) {
+    public void setCurrentCode(String currentCode) {
         this.currentCode = currentCode;
     }
 

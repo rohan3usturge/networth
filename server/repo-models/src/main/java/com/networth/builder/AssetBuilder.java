@@ -15,12 +15,22 @@ public class AssetBuilder {
         this.id = UUID.randomUUID().toString();
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public void setAmount(Double amount) {
+    private void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public AssetBuilder name(String name) {
+        setName(name);
+        return this;
+    }
+
+    public AssetBuilder amount(Double amount) {
+        setAmount(amount);
+        return this;
     }
 
     public Asset build() {

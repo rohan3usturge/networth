@@ -1,7 +1,8 @@
-package com.networth.svc;
+package com.networth.svc.calculators;
 
 import java.util.List;
 
+import com.networth.svc.CurrencyService;
 import com.networth.svc.models.CalculationContext;
 import com.networth.svc.models.LiabilityCategoryDm;
 import com.networth.svc.models.LiabilityDm;

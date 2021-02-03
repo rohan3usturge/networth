@@ -1,40 +1,51 @@
-import { LineItemCategory } from "./line-item-category";
+import { CurrencyForm } from "./../currency/currency-form";
+import { AssetCategoryList } from "./asset-category-list";
+import { LiabilityCategoryList } from "./liability-category-list";
 import { useState } from "react";
 
-const NetWorthContainer = ({ defaultNetworth }) => {
-  const [netWorth, setNetWorth] = useState(defaultNetworth || {});
+const NetWorthContainer = ({ defaultPortfolio }) => {
+  const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
 
-  const handleCategoryUpdate = (updatedCategory) => {
-    const copy = { ...netWorth };
-    const newCategories = netWorth.categories.map((category) => {
-      if (category.name === updatedCategory.name) {
-        return updatedCategory;
-      }
+  const handleLiabilitiesChange = (changedL) => {
+    const changed = { ...portfolio };
+    changed.liabilities = changedL;
+    setPortfolio(changed);
+  };
 
-      return category;
-    });
-    copy.categories = newCategories;
-    setNetWorth(copy);
+  const handleAssetChange = (changedA) => {
+    const changed = { ...portfolio };
+    changed.assets = changedA;
+    setPortfolio(changed);
+  };
+
+  const handleCurrencyChange = (changedC) => {
+    const changed = { ...portfolio };
+    changed.targetCurrencyCode = changedC;
+    setPortfolio(changed);
   };
 
   return (
-    <div className="card bg-light mb-3">
-      <div className="card-header">Net Worth Calculator</div>
-      <div className="card-body ">
-        <>
-          {netWorth.categories.map((category) => {
-            return (
-              <LineItemCategory
-                key={category.name}
-                category={category}
-                onUpdate={handleCategoryUpdate}
-              />
-            );
-          })}
-        </>
-        <span>{JSON.stringify(netWorth)}</span>
-      </div>
-    </div>
+    <>
+      <div>TARGET - {portfolio.targetCurrencyCode}</div>
+      <div>CURRENT - {portfolio.currencyCode}</div>
+      <CurrencyForm
+        selectedCurrency={portfolio.currencyCode}
+        currencies={[
+          { currencyCode: "CAD" },
+          { currencyCode: "USD" },
+          { currencyCode: "INR" },
+        ]}
+        onChange={handleCurrencyChange}
+      />
+      <AssetCategoryList
+        categories={portfolio.assets}
+        onChange={handleAssetChange}
+      />
+      <LiabilityCategoryList
+        categories={portfolio.liabilities}
+        onChange={handleLiabilitiesChange}
+      />
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-package com.networth.svc;
+package com.networth.svc.calculators;
 
 import java.util.List;
 

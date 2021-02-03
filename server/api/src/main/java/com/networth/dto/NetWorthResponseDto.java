@@ -8,8 +8,6 @@ public class NetWorthResponseDto {
 
     private String currencyCode;
 
-    private String currencySymbol;
-
     public NetWorthDm getNetWorthDm() {
         return this.netWorthDm;
     }
@@ -26,18 +24,9 @@ public class NetWorthResponseDto {
         this.currencyCode = currencyCode;
     }
 
-    public String getCurrencySymbol() {
-        return this.currencySymbol;
-    }
-
-    public void setCurrencySymbol(String currencySymbol) {
-        this.currencySymbol = currencySymbol;
-    }
-
     @Override
     public String toString() {
-        return "{" + " netWorthDm='" + getNetWorthDm() + "'" + ", currencyCode='" + getCurrencyCode() + "'"
-                + ", currencySymbol='" + getCurrencySymbol() + "'" + "}";
+        return "{" + " netWorthDm='" + getNetWorthDm() + "'" + ", currencyCode='" + getCurrencyCode() + "'" + "}";
     }
 
 }

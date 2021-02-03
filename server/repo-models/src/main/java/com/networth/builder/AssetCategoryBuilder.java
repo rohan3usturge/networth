@@ -16,12 +16,17 @@ public class AssetCategoryBuilder {
         this.items = new ArrayList<>();
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
     public void addItem(Asset item) {
         this.items.add(item);
+    }
+
+    public AssetCategoryBuilder name(String name) {
+        setName(name);
+        return this;
     }
 
     public AssetCategory build() {

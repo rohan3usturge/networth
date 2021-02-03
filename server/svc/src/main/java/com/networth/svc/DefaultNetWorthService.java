@@ -3,7 +3,7 @@ package com.networth.svc;
 import com.networth.infra.mapper.InfraMapper;
 import com.networth.models.LineItemsContainer;
 import com.networth.repo.NetWorthRepository;
-import com.networth.svc.models.CurrencyCode;
+import com.networth.svc.calculators.NetWorthCalculator;
 import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
 
@@ -24,9 +24,8 @@ public class DefaultNetWorthService implements NetWorthService {
 	}
 
 	@Override
-	public NetWorthDm calculate(CurrencyCode currentCode, LineItemsContainerDm lineItems) {
+	public NetWorthDm calculate(String currentCode, LineItemsContainerDm lineItems) {
 		return this.netWorthCalculator.calculate(currentCode, lineItems);
-
 	}
 
 	@Override

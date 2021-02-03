@@ -1,19 +1,28 @@
 package com.networth.dto;
 
-import com.networth.svc.models.CurrencyCode;
 import com.networth.svc.models.LineItemsContainerDm;
 
 public class NetWorthRequestDto {
 
-    private CurrencyCode currencyCode;
+    private String currencyCode;
+
+    private String targetCurrencyCode;
 
     private LineItemsContainerDm lineItems;
 
-    public CurrencyCode getCurrencyCode() {
+    public String getTargetCurrencyCode() {
+        return this.targetCurrencyCode;
+    }
+
+    public void setTargetCurrencyCode(String targetCurrencyCode) {
+        this.targetCurrencyCode = targetCurrencyCode;
+    }
+
+    public String getCurrencyCode() {
         return this.currencyCode;
     }
 
-    public void setCurrencyCode(CurrencyCode currencyCode) {
+    public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
 
@@ -23,11 +32,6 @@ public class NetWorthRequestDto {
 
     public void setLineItems(LineItemsContainerDm lineItems) {
         this.lineItems = lineItems;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + " currencyCode='" + getCurrencyCode() + "'" + ", lineItems='" + getLineItems() + "'" + "}";
     }
 
 }

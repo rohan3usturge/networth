@@ -1,11 +1,13 @@
 package com.networth.svc;
 
-import com.networth.svc.models.CurrencyCode;
+import java.util.List;
+
+import com.networth.models.Currency;
 
 public interface CurrencyService {
 
-    public Double getConversionRate(CurrencyCode targetCurrency);
+    public Double getConversionRate(String targetCurrency);
 
-    public String getCurrencySymbol(CurrencyCode targetCurrency);
+    public List<Currency> getAll();
 
 }

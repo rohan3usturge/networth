@@ -1,10 +1,9 @@
-package com.networth.svc;
+package com.networth.svc.calculators;
 
 import java.util.List;
 
 import com.networth.svc.models.AssetCategoryDm;
 import com.networth.svc.models.CalculationContext;
-import com.networth.svc.models.CurrencyCode;
 import com.networth.svc.models.LiabilityCategoryDm;
 import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
@@ -23,7 +22,7 @@ public class DefaultNetWorthCalculator implements NetWorthCalculator {
     }
 
     @Override
-    public NetWorthDm calculate(CurrencyCode currentCode, LineItemsContainerDm container) {
+    public NetWorthDm calculate(String currentCode, LineItemsContainerDm container) {
         NetWorthDm netWorthDm = new NetWorthDm();
         CalculationContext<List<AssetCategoryDm>> assetContext = new CalculationContext<>(currentCode,
                 container.getAssets());
