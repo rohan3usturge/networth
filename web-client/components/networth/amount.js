@@ -51,7 +51,10 @@ const Amount = ({ defaultValue, currency, disabled, onChange }) => {
         onFocus={handleFocus}
       />
       {isError && (
-        <div className="text-danger">Please provide a valid number</div>
+        <div className="text-danger">
+          <i class="fas fa-exclamation mr-1"></i>
+          <small>Please enter a valid number</small>
+        </div>
       )}
     </div>
   );

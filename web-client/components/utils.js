@@ -15,15 +15,16 @@ const convertNumToMoney = (currVal, currency) => {
 };
 
 const currencyCodeToFaClass = {
-  INR: "fa-rupee-sign",
-  CAD: "fas-dollar-sign",
-  USD: "fas-dollar-sign",
-  GBP: "fas-pound-sign",
-  EUR: "fas-euro-sign",
-  AUD: "fas-dollar-sign",
-  NZD: "fas-dollar-sign",
-  JPY: "fas-yen-sign",
-  CNY: "fas-yen-sign",
+  INR: { class: "fa-rupee-sign", label: "Indian Rupee" },
+  CAD: { class: "fa-dollar-sign", label: "Canadian Dollar" },
+  USD: { class: "fa-dollar-sign", label: "US Dollar" },
+  GBP: { class: "fa-pound-sign", label: "British Pound" },
+  EUR: { class: "fa-euro-sign", label: "Euro" },
+  AUD: { class: "fa-dollar-sign", label: "Australian Dollar" },
+  NZD: { class: "fa-dollar-sign", label: "New Zealand Dollar" },
+  JPY: { class: "fa-yen-sign", label: "Japanese Yen" },
+  CNY: { class: "fa-yen-sign", label: "Chinese Yen" },
+  CHF: { class: "", label: "Swiss Franc" },
 };
 
 export const CURRENCY_UTILS = { currencyCodeToFaClass };
