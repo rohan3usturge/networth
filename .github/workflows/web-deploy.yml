@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - "web-client/**"
-on: [push]
 
 env:
   AZURE_WEBAPP_NAME: networth-web   # set this to your application's name
