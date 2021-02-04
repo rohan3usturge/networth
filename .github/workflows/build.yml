@@ -29,6 +29,6 @@ jobs:
           context: ./server/api
           file: ./server/api/Dockerfile
           push: true
-          tags: rohanusturge/services: net-worth-api-latest
+          tags: "rohanusturge/services:net-worth-api-latest"
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
