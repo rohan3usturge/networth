@@ -21,7 +21,7 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
       targetCurrencyCode,
     };
     const nw = await NETWORTH_API.getNetWorth(nwRequest);
-    await timeout(1500);
+    await timeout(500);
     setIsLoading(false);
     setPortfolio(nw.portfolio);
   };

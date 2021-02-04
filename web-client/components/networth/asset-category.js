@@ -16,13 +16,11 @@ const AssetCategory = ({ category, onChange, disabled, currency }) => {
   };
 
   return (
-    <table className="table table-borderless ">
+    <table className="table table-borderless table-responsive">
       <thead>
-        <tr className="d-flex">
-          <th scope="col" className="col-4">
-            {category.meta.name}
-          </th>
-          <th className="col-8"></th>
+        <tr>
+          <th scope="col">{category.meta.name}</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

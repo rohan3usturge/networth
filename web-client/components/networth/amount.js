@@ -45,7 +45,7 @@ const Amount = ({ defaultValue, currency, disabled, onChange }) => {
         disabled={disabled}
         type="text"
         value={value}
-        className="form-control"
+        className="form-control money-input"
         onChange={handleChange}
         onBlur={handleBlur}
         onFocus={handleFocus}

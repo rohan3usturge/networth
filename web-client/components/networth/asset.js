@@ -10,9 +10,9 @@ const Asset = ({ asset, onChange, disabled, currency }) => {
   };
 
   return (
-    <tr className="d-flex">
-      <td className="col-4">{asset.lineItem.name}</td>
-      <td className="col-8">
+    <tr>
+      <td>{asset.lineItem.name}</td>
+      <td>
         <div className="input-group mb-3">
           <Amount
             disabled={disabled}

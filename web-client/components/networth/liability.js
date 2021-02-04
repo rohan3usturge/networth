@@ -11,12 +11,12 @@ const Liability = ({ liability, onChange, disabled, currency }) => {
   };
 
   return (
-    <tr className="d-flex">
-      <td className="col-2">{liability.lineItem.name}</td>
-      <td className="col-2">
+    <tr>
+      <td>{liability.lineItem.name}</td>
+      <td>
         {NUMBER_UTILS.convertNumToMoney(liability.monthlyPayment, currency)}
       </td>
-      <td className="col-8">
+      <td>
         <Amount
           disabled={disabled}
           defaultValue={liability.lineItem.amount}
