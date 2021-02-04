@@ -10,7 +10,7 @@ public class ApiException extends RuntimeException {
 
 	private String message;
 
-	private List<ErrorItem> errors;
+	private final List<ErrorItem> errors;
 
 	/**
 	 * 
@@ -22,6 +22,7 @@ public class ApiException extends RuntimeException {
 		this.apiExceptionType = apiExceptionType;
 		this.code = code;
 		this.message = message;
+		this.errors = null;
 	}
 
 	public ApiException(ApiExceptionType apiExceptionType, String code, String message, List<ErrorItem> errorItems) {
@@ -35,12 +36,14 @@ public class ApiException extends RuntimeException {
 	public ApiException(ApiExceptionType apiExceptionType) {
 		super();
 		this.apiExceptionType = apiExceptionType;
+		this.errors = null;
 	}
 
 	public ApiException(ApiExceptionType apiExceptionType, String code) {
 		super();
 		this.apiExceptionType = apiExceptionType;
 		this.code = code;
+		this.errors = null;
 	}
 
 	public ApiExceptionType getApiExceptionType() {

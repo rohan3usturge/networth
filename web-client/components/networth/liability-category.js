@@ -16,12 +16,12 @@ const LiablityCategory = ({ category, onChange, disabled, currency }) => {
   };
 
   return (
-    <table className="table table-borderless">
+    <table className="table table-borderless table-sm">
       <thead>
         <tr>
           <th scope="col">{category.meta.name}</th>
           <th>Monthly Payment</th>
-          <th>{`                                `}</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

@@ -25,8 +25,9 @@ const LiabilityCategoryList = ({
     <>
       <div className="card mb-3">
         <div className="card-header bg-danger text-white">
+          <i className="fas fa-file-invoice mr-2"></i>
           LIABILITIES
-          <span className="float-right h6">
+          <span className="float-right h5">
             {NUMBER_UTILS.convertNumToMoney(total, currency)}
           </span>
         </div>

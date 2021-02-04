@@ -60,10 +60,13 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
         onChange={handleCurrencyChange}
       />
       <div className="card text-white bg-primary mb-3">
-        <div className="card-body d-flex justify-content-between">
-          <span>TOTAL NET WORTH</span>
+        <div className="card-body d-flex justify-content-between h4">
+          <span>
+            <i className="fas fa-balance-scale mr-2"></i>
+            TOTAL NET WORTH
+          </span>
           {portfolio.netWorth && (
-            <span className="h4">
+            <span>
               {NUMBER_UTILS.convertNumToMoney(
                 portfolio.netWorth.totalNetWorth,
                 portfolio.currencyCode

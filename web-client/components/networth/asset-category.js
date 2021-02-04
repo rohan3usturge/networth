@@ -16,7 +16,7 @@ const AssetCategory = ({ category, onChange, disabled, currency }) => {
   };
 
   return (
-    <table className="table table-borderless table-responsive">
+    <table className="table table-borderless table-sm">
       <thead>
         <tr>
           <th scope="col">{category.meta.name}</th>
