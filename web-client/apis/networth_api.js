@@ -3,6 +3,7 @@ import axios from "axios";
 const baseUrl = `https://networth-api.azurewebsites.net/api`;
 
 //
+//
 
 const getDefaultLineItems = async () => {
   const response = await axios.get(`${baseUrl}/networth`, {
