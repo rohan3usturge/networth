@@ -10,10 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Maven Package
-        working-directory: ./server/services-parent
+        working-directory: ./server
         run: |
-          ./mvnw clean
-          ./mvnw package
+          ./mvnw clean -f ./services-parent/pom.xml
+          ./mvnw package -f ./services-parent/pom.xml
       - name: Set up QEMU
         uses: docker/setup-qemu-action@master
       - name: Set up Docker Buildx
