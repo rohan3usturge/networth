@@ -5,15 +5,6 @@ public class LineItemDm {
 	private String id;
 	private String name;
 	private Double amount;
-	private String displayAmount;
-
-	public String getDisplayAmount() {
-		return this.displayAmount;
-	}
-
-	public void setDisplayAmount(String displayAmount) {
-		this.displayAmount = displayAmount;
-	}
 
 	public String getId() {
 		return id;

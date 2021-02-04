@@ -1,12 +1,9 @@
 package com.networth.svc;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 import com.networth.models.Currency;
 import com.networth.repo.CurrencyRepository;
-import com.networth.svc.models.AmountDm;
 
 import org.springframework.stereotype.Service;
 
@@ -20,18 +17,12 @@ public class DefaultCurrencyService implements CurrencyService {
     }
 
     @Override
-    public Double getConversionRate(String targetCurrency) {
-        return 0.9;
-    }
-
-    @Override
     public List<Currency> getAll() {
         return repository.getAll();
     }
 
     @Override
-    public AmountDm convert(Double value, String currencyCode, String targetCurrencyCode) {
-        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance(Locale.getDefault());
+    public Double convert(Double value, String currencyCode, String targetCurrencyCode) {
         Double sourceExchangeRate = null;
         Double targetExchangeRate = null;
         List<Currency> all = repository.getAll();
@@ -43,15 +34,8 @@ public class DefaultCurrencyService implements CurrencyService {
                 targetExchangeRate = currency.getExchangeRate();
             }
         }
-
         Double multiplier = targetExchangeRate / sourceExchangeRate;
-
-        Double finalValue = value * multiplier;
-
-        AmountDm infraMoney = new AmountDm();
-        infraMoney.setValue(finalValue);
-        infraMoney.setDisplayValue(currencyInstance.format(finalValue));
-        return infraMoney;
+        return value * multiplier;
     }
 
 }

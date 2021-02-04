@@ -1,12 +1,18 @@
+import { NUMBER_UTILS } from "../utils";
 import { AssetCategory } from "./asset-category";
 
-const AssetCategoryList = ({ categories, onChange, disabled, total }) => {
+const AssetCategoryList = ({
+  categories,
+  onChange,
+  disabled,
+  total,
+  currency,
+}) => {
   const handleChange = (changedCategory) => {
     const changed = categories.map((category) => {
-      if (category.id === changedCategory.id) {
+      if (category.meta.id == changedCategory.meta.id) {
         return changedCategory;
       }
-
       return category;
     });
     if (onChange) {
@@ -17,11 +23,17 @@ const AssetCategoryList = ({ categories, onChange, disabled, total }) => {
   return (
     <>
       <div className="card mb-3">
-        <div className="card-header">ASSETS {total}</div>
+        <div className="card-header">
+          ASSETS{" "}
+          <span className="float-right text-success h6">
+            {NUMBER_UTILS.convertNumToMoney(total, currency)}
+          </span>
+        </div>
         <div className="card-body">
           {categories.map((category) => {
             return (
               <AssetCategory
+                currency={currency}
                 key={category.meta.id}
                 category={category}
                 onChange={handleChange}

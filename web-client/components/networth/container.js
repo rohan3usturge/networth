@@ -3,6 +3,7 @@ import { AssetCategoryList } from "./asset-category-list";
 import { LiabilityCategoryList } from "./liability-category-list";
 import { useState } from "react";
 import { NETWORTH_API } from "../../apis/networth_api";
+import { NUMBER_UTILS } from "../utils";
 
 const NetWorthContainer = ({ defaultPortfolio }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
@@ -12,23 +13,17 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const fetchNetWorth = async (portfolioRequest) => {
+  const fetchNetWorth = async (currentPortfolio, targetCurrencyCode) => {
     setIsLoading(true);
-    const nw = await NETWORTH_API.getNetWorth({
-      portfolio: {
-        lineItems: portfolioRequest.lineItems,
-        currencyCode: portfolioRequest.currencyCode,
-      },
-      targetCurrencyCode: portfolioRequest.targetCurrencyCode,
-    });
+    targetCurrencyCode = targetCurrencyCode || currentPortfolio.currencyCode;
+    const nwRequest = {
+      portfolio: currentPortfolio,
+      targetCurrencyCode,
+    };
+    const nw = await NETWORTH_API.getNetWorth(nwRequest);
     await timeout(1500);
     setIsLoading(false);
-    setPortfolio({
-      currencyCode: nw.portfolio.currencyCode,
-      targetCurrencyCode: nw.portfolio.currencyCode,
-      lineItems: nw.portfolio.lineItems,
-      netWorth: nw.portfolio.netWorth,
-    });
+    setPortfolio(nw.portfolio);
   };
 
   const handleLiabilitiesChange = (changedL) => {
@@ -46,10 +41,7 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
   };
 
   const handleCurrencyChange = (changedC) => {
-    const changed = { ...portfolio };
-    changed.targetCurrencyCode = changedC;
-    setPortfolio(changed);
-    fetchNetWorth(changed);
+    fetchNetWorth(portfolio, changedC);
   };
 
   return (
@@ -62,25 +54,45 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
           <span className="sr-only">Loading...</span>
         </div>
       )}
+
       <CurrencyForm
         selectedCurrency={portfolio.currencyCode}
         currencies={[
           { currencyCode: "CAD" },
           { currencyCode: "USD" },
           { currencyCode: "INR" },
+          { currencyCode: "EUR" },
+          { currencyCode: "GBP" },
+          { currencyCode: "CHF" },
         ]}
         onChange={handleCurrencyChange}
       />
+      <div className="card mb-3">
+        <div className="card-body">
+          <span>TOTAL NET WORTH</span>
+          <span className="float-right text-success h6">
+            {NUMBER_UTILS.convertNumToMoney(
+              portfolio.netWorth && portfolio.netWorth.totalNetWorth,
+              portfolio.currencyCode
+            )}
+          </span>
+        </div>
+      </div>
       <AssetCategoryList
+        currency={portfolio.currencyCode}
         categories={portfolio.lineItems.assets}
         onChange={handleAssetChange}
         disabled={isLoading}
         total={portfolio.netWorth ? portfolio.netWorth.totalAssets : undefined}
       />
       <LiabilityCategoryList
+        currency={portfolio.currencyCode}
         categories={portfolio.lineItems.liabilities}
         onChange={handleLiabilitiesChange}
         disabled={isLoading}
+        total={
+          portfolio.netWorth ? portfolio.netWorth.totalLiabilities : undefined
+        }
       />
     </>
   );

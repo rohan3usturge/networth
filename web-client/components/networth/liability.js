@@ -1,7 +1,7 @@
-const Liability = ({ liability, onChange, disabled }) => {
+const Liability = ({ liability, onChange, disabled, currency }) => {
   const handleChange = (e) => {
     const changed = { ...liability };
-    changed.amount = e.target.value;
+    changed.lineItem.amount = e.target.value;
     if (onChange) {
       onChange(changed);
     }
@@ -12,13 +12,12 @@ const Liability = ({ liability, onChange, disabled }) => {
       <td className="col-2">{liability.lineItem.name}</td>
       <td className="col-2">{liability.monthlyPayment}</td>
       <td className="col-8">
-        <input
+        <Amount
           disabled={disabled}
-          type="number"
-          value={liability.lineItem.amount}
+          defaultValue={liability.lineItem.amount}
+          currency={currency}
           className="form-control"
           onChange={handleChange}
-          id="liability-amount-input"
         />
       </td>
     </tr>

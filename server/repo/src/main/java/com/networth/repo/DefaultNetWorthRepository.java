@@ -21,15 +21,15 @@ public class DefaultNetWorthRepository implements NetWorthRepository {
     @Override
     public LineItemsContainer getLineItemsContainer() {
         LineItemsContainerBuilder builder = new LineItemsContainerBuilder();
-        int categoryCount = 5;
-        int aCount = 7;
-        int lCount = 3;
+        int categoryCount = 1;
+        int aCount = 1;
+        int lCount = 0;
 
         for (int i = 0; i < categoryCount; i++) {
 
             boolean isOdd = i % 2 != 0;
 
-            if (isOdd) {
+            if (!isOdd) {
                 AssetCategoryBuilder aCategoryBuilder = new AssetCategoryBuilder();
                 aCategoryBuilder.name("AssetCategory " + i);
                 for (int j = 0; j < aCount; j++) {

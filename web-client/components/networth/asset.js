@@ -1,7 +1,9 @@
-const Asset = ({ asset, onChange, disabled }) => {
-  const handleChange = (e) => {
+import { Amount } from "./amount";
+
+const Asset = ({ asset, onChange, disabled, currency }) => {
+  const handleChange = (changedAmount) => {
     const changed = { ...asset };
-    changed.amount = e.target.value;
+    changed.lineItem.amount = changedAmount;
     if (onChange) {
       onChange(changed);
     }
@@ -12,16 +14,13 @@ const Asset = ({ asset, onChange, disabled }) => {
       <td className="col-4">{asset.lineItem.name}</td>
       <td className="col-8">
         <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text">$</span>
-          </div>
-          <input
+          <Amount
+            currency={currency}
             disabled={disabled}
-            type="text"
-            value={asset.lineItem.displayAmount}
+            defaultValue={asset.lineItem.amount}
+            currency={currency}
             className="form-control"
             onChange={handleChange}
-            id="liability-amount-input"
           />
         </div>
       </td>

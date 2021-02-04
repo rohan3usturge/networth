@@ -15,17 +15,18 @@ export default withAppLayout(Home);
 export async function getServerSideProps() {
   const lineItems = await NETWORTH_API.getDefaultLineItems();
   const currencyCode = "CAD";
-  const targetCurrencyCode = "CAD";
-
   const portfolio = {
     currencyCode,
-    targetCurrencyCode,
     lineItems,
   };
-
+  const nwRequest = {
+    portfolio,
+    targetCurrencyCode: currencyCode,
+  };
+  const finalPortfolio = await NETWORTH_API.getNetWorth(nwRequest);
   return {
     props: {
-      portfolio: portfolio || {},
+      portfolio: finalPortfolio.portfolio || {},
     },
   };
 }
