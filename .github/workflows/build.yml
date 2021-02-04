@@ -1,0 +1,34 @@
+name: Build And Deploy Server
+on:
+  push:
+    paths:
+      - "server/**"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Maven Package
+        working-directory: ./server
+        run: |
+          ./mvnw clean -f ./services-parent/pom.xml
+          ./mvnw package -f ./services-parent/pom.xml
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@master
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@master
+      - name: Login to DockerHub
+        uses: docker/login-action@master
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and Publish Query Api
+        uses: docker/build-push-action@master
+        with:
+          context: ./server/api
+          file: ./server/api/Dockerfile
+          push: true
+          tags: rohanusturge/services:net-worth-api-latest
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
