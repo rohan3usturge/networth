@@ -23,9 +23,9 @@ const AssetCategoryList = ({
   return (
     <>
       <div className="card mb-3">
-        <div className="card-header">
+        <div className="card-header text-white bg-success">
           ASSETS{" "}
-          <span className="float-right text-success h6">
+          <span className="float-right h5">
             {NUMBER_UTILS.convertNumToMoney(total, currency)}
           </span>
         </div>

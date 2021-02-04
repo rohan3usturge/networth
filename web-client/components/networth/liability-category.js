@@ -16,7 +16,7 @@ const LiablityCategory = ({ category, onChange, disabled, currency }) => {
   };
 
   return (
-    <table className="table table-borderless">
+    <table className="table table-borderless ">
       <thead>
         <tr className="d-flex">
           <th scope="col" className="col-2">

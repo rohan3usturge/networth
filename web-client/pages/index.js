@@ -2,10 +2,10 @@ import { NETWORTH_API } from "../apis/networth_api";
 import withAppLayout from "../components/layout/app-layout";
 import { NetWorthContainer } from "../components/networth/container";
 
-const Home = ({ portfolio }) => {
+const Home = ({ portfolio, currencies }) => {
   return (
     <div>
-      <NetWorthContainer defaultPortfolio={portfolio} />
+      <NetWorthContainer currencies={currencies} defaultPortfolio={portfolio} />
     </div>
   );
 };
@@ -23,10 +23,13 @@ export async function getServerSideProps() {
     portfolio,
     targetCurrencyCode: currencyCode,
   };
-  const finalPortfolio = await NETWORTH_API.getNetWorth(nwRequest);
+  const currencyCall = NETWORTH_API.getCurrencies();
+  const finalPortfolioCall = NETWORTH_API.getNetWorth(nwRequest);
+  const result = await Promise.all([currencyCall, finalPortfolioCall]);
   return {
     props: {
-      portfolio: finalPortfolio.portfolio || {},
+      currencies: result[0],
+      portfolio: result[1].portfolio || {},
     },
   };
 }

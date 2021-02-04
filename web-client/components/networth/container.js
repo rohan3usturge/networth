@@ -5,7 +5,7 @@ import { useState } from "react";
 import { NETWORTH_API } from "../../apis/networth_api";
 import { NUMBER_UTILS } from "../utils";
 
-const NetWorthContainer = ({ defaultPortfolio }) => {
+const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -47,35 +47,29 @@ const NetWorthContainer = ({ defaultPortfolio }) => {
   return (
     <>
       {isLoading && (
-        <div
-          className="spinner-grow text-primary d-flex justify-content-center"
-          role="status"
-        >
-          <span className="sr-only">Loading...</span>
+        <div className="d-flex justify-content-center">
+          <div className="spinner-grow text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
       )}
 
       <CurrencyForm
         selectedCurrency={portfolio.currencyCode}
-        currencies={[
-          { currencyCode: "CAD" },
-          { currencyCode: "USD" },
-          { currencyCode: "INR" },
-          { currencyCode: "EUR" },
-          { currencyCode: "GBP" },
-          { currencyCode: "CHF" },
-        ]}
+        currencies={currencies}
         onChange={handleCurrencyChange}
       />
-      <div className="card mb-3">
-        <div className="card-body">
+      <div className="card text-white bg-primary mb-3">
+        <div className="card-body d-flex justify-content-between">
           <span>TOTAL NET WORTH</span>
-          <span className="float-right text-success h6">
-            {NUMBER_UTILS.convertNumToMoney(
-              portfolio.netWorth && portfolio.netWorth.totalNetWorth,
-              portfolio.currencyCode
-            )}
-          </span>
+          {portfolio.netWorth && (
+            <span className="h4">
+              {NUMBER_UTILS.convertNumToMoney(
+                portfolio.netWorth.totalNetWorth,
+                portfolio.currencyCode
+              )}
+            </span>
+          )}
         </div>
       </div>
       <AssetCategoryList

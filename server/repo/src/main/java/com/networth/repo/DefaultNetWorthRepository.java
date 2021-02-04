@@ -21,9 +21,9 @@ public class DefaultNetWorthRepository implements NetWorthRepository {
     @Override
     public LineItemsContainer getLineItemsContainer() {
         LineItemsContainerBuilder builder = new LineItemsContainerBuilder();
-        int categoryCount = 1;
-        int aCount = 1;
-        int lCount = 0;
+        int categoryCount = 5;
+        int aCount = 3;
+        int lCount = 2;
 
         for (int i = 0; i < categoryCount; i++) {
 

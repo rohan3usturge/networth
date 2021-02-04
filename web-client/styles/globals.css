@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+td,
+th {
+  text-overflow: ellipsis;
+}

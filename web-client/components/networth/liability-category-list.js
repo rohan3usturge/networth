@@ -23,10 +23,10 @@ const LiabilityCategoryList = ({
 
   return (
     <>
-      <div className="card  mb-3">
-        <div className="card-header">
+      <div className="card mb-3">
+        <div className="card-header bg-danger text-white">
           LIABILITIES
-          <span className="float-right text-success h6">
+          <span className="float-right h6">
             {NUMBER_UTILS.convertNumToMoney(total, currency)}
           </span>
         </div>

@@ -27,7 +27,7 @@ const getNetWorth = async (netWorthCalculateRequest) => {
 };
 
 const getCurrencies = async () => {
-  const response = await axios.get(`${baseUrl}/currencies`, {
+  const response = await axios.get(`${baseUrl}/networth/currencies`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

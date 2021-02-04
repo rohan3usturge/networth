@@ -23,8 +23,8 @@ const CurrencyForm = ({ currencies, onChange, selectedCurrency }) => {
         <option>Choose...</option>
         {currencies ? (
           currencies.map((curr) => (
-            <option key={curr.currencyCode} value={curr.currencyCode}>
-              {curr.currencyCode}
+            <option key={curr} value={curr}>
+              {curr}
             </option>
           ))
         ) : (

@@ -3,10 +3,10 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 
 const withAppLayout = (ComposedComponent) => (props) => (
-  <section>
+  <section className="bg-light">
     <Header {...props} />
     <div className="mt-5" />
-    <main className="container-fluid pl-5 pr-5">
+    <main className="container-md pl-1 pr-1">
       <div>
         <ComposedComponent {...props} />
       </div>

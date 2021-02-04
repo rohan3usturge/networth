@@ -22,6 +22,8 @@ public class MemoryBasedCurrencyRepository implements CurrencyRepository {
         currencies.add(new CurrencyBuilder().currencyCode("AUD").exchangeRate(1.1).build());
         currencies.add(new CurrencyBuilder().currencyCode("NZD").exchangeRate(1.3).build());
         currencies.add(new CurrencyBuilder().currencyCode("CHF").exchangeRate(0.75).build());
+        currencies.add(new CurrencyBuilder().currencyCode("JPY").exchangeRate(80.2).build());
+        currencies.add(new CurrencyBuilder().currencyCode("CNY").exchangeRate(80.2).build());
         return currencies;
     }
 
