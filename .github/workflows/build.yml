@@ -14,6 +14,12 @@ jobs:
         run: |
           ./mvnw clean -f ./services-parent/pom.xml
           ./mvnw package -f ./services-parent/pom.xml
+      - name: jacoco-badge-generator
+        id: jacoco
+        uses: cicirello/jacoco-badge-generator@v1.0.0
+      - name: Log coverage percentage
+        run: |
+          echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
       - name: Set up QEMU
         uses: docker/setup-qemu-action@master
       - name: Set up Docker Buildx
