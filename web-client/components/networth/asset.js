@@ -15,7 +15,6 @@ const Asset = ({ asset, onChange, disabled, currency }) => {
       <td className="col-8">
         <div className="input-group mb-3">
           <Amount
-            currency={currency}
             disabled={disabled}
             defaultValue={asset.lineItem.amount}
             currency={currency}

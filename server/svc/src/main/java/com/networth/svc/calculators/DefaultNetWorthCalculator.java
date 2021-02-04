@@ -26,7 +26,7 @@ public class DefaultNetWorthCalculator implements NetWorthCalculator {
         NetWorthDm netWorthDm = new NetWorthDm();
         Double totalAssets = processAssets(targetCurrencyCode, portfolio);
         Double totalLiabilities = processLiabilities(targetCurrencyCode, portfolio);
-        Double totalNetWorth = totalAssets + totalLiabilities;
+        Double totalNetWorth = totalAssets - totalLiabilities;
         netWorthDm.setTotalAssets(totalAssets);
         netWorthDm.setTotalNetWorth(totalNetWorth);
         netWorthDm.setTotalLiabilities(totalLiabilities);

@@ -2,9 +2,9 @@ import { NUMBER_UTILS } from "../utils";
 import { Amount } from "./amount";
 
 const Liability = ({ liability, onChange, disabled, currency }) => {
-  const handleChange = (e) => {
+  const handleChange = (changedAmount) => {
     const changed = { ...liability };
-    changed.lineItem.amount = e.target.value;
+    changed.lineItem.amount = changedAmount;
     if (onChange) {
       onChange(changed);
     }
