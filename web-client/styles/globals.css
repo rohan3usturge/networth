@@ -19,3 +19,7 @@ td,
 th {
   text-overflow: ellipsis;
 }
+
+table {
+  table-layout: fixed;
+}
