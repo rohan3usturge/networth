@@ -23,11 +23,4 @@ public class NetWorthRequestDto {
     public void setTargetCurrencyCode(String targetCurrencyCode) {
         this.targetCurrencyCode = targetCurrencyCode;
     }
-
-    @Override
-    public String toString() {
-        return "{" + " targetCurrencyCode='" + getTargetCurrencyCode() + "'" + ", portfolio='" + getPortfolio() + "'"
-                + "}";
-    }
-
 }

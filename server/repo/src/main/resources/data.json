@@ -1,0 +1,200 @@
+{
+  "assets": [
+    {
+      "meta": {
+        "id": "4a1ee485-b0b8-40da-9773-3e78883cebfe",
+        "name": "Cash and Investments"
+      },
+      "items": [
+        {
+          "lineItem": {
+            "id": "65b8d096-a09d-4d3f-a306-3d5987ebfa87",
+            "name": "Chequing",
+            "amount": 2000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "f2ba6882-ae62-4b27-b227-f81b504e3313",
+            "name": "Savings for Taxes",
+            "amount": 4000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "f2ba6882-ae62-4b27-b227-f81b504e3313",
+            "name": "Rainy Day Fund",
+            "amount": 506.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Savings for Fun",
+            "amount": 5000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Savings for Travel",
+            "amount": 400.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Savings for Personal Development",
+            "amount": 200.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Investment 1",
+            "amount": 5000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Investment 2",
+            "amount": 60000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Investment 3",
+            "amount": 30000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Investment 4",
+            "amount": 50000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "47770dab-0af7-4b8f-aa3a-6eda7f1b7dee",
+            "name": "Investment 5",
+            "amount": 24000.0
+          }
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "bf5d26e9-24d6-4994-aa85-954763d5eb25",
+        "name": "Long Term Assets"
+      },
+      "items": [
+        {
+          "lineItem": {
+            "id": "6f2b4a6e-6c6c-4855-8262-cb073406659f",
+            "name": "Primary Home",
+            "amount": 455000.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "d028ca68-b37e-48cf-97cb-6d82919f457e",
+            "name": "Second Home",
+            "amount": 1564321.0
+          }
+        },
+        {
+          "lineItem": {
+            "id": "c994874a-b8a1-4796-94e5-1aaba2f7d2fc",
+            "name": "Other",
+            "amount": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "liabilities": [
+    {
+      "meta": {
+        "id": "7e561ce7-c705-49dc-9a67-bdc22f68e846",
+        "name": "Short Term Liabilties"
+      },
+      "items": [
+        {
+          "lineItem": {
+            "id": "e867caf4-25bd-4ae2-acbd-012b09bbcca8",
+            "name": "Credit Card 1",
+            "amount": 4342.0
+          },
+          "monthlyPayment": 200.0
+        },
+        {
+          "lineItem": {
+            "id": "b1b6cb9d-36f3-467e-9cc7-769d67b5d9f2",
+            "name": "Credit Card 2",
+            "amount": 322.0
+          },
+          "monthlyPayment": 150.0
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "337f5868-c0e8-47c8-8e46-7476fe8964af",
+        "name": "Long Term Debt"
+      },
+      "items": [
+        {
+          "lineItem": {
+            "id": "de65d5b7-dfc3-41cc-be81-8bd6cc142a74",
+            "name": "Mortgage 1",
+            "amount": 250999.0
+          },
+          "monthlyPayment": 2000.0
+        },
+        {
+          "lineItem": {
+            "id": "2c0b1359-b53b-4f21-835b-86bd563ccf11",
+            "name": "Mortgage 2",
+            "amount": 632634.0
+          },
+          "monthlyPayment": 3500.0
+        },
+        {
+          "lineItem": {
+            "id": "2c0b1359-b53b-4f21-835b-86bd563ccf11",
+            "name": "Line of Credit",
+            "amount": 10000.0
+          },
+          "monthlyPayment": 500.0
+        },
+        {
+          "lineItem": {
+            "id": "2c0b1359-b53b-4f21-835b-86bd563ccf11",
+            "name": "Investment Loan",
+            "amount": 10000.0
+          },
+          "monthlyPayment": 700.0
+        },
+        {
+          "lineItem": {
+            "id": "2c0b1359-b53b-4f21-835b-86bd563ccf11",
+            "name": "Student Loan",
+            "amount": 0.0
+          },
+          "monthlyPayment": null
+        },
+        {
+          "lineItem": {
+            "id": "2c0b1359-b53b-4f21-835b-86bd563ccf11",
+            "name": "Car Loan",
+            "amount": 0.0
+          },
+          "monthlyPayment": null
+        }
+      ]
+    }
+  ]
+}

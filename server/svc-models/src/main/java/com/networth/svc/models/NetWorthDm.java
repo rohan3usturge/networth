@@ -29,10 +29,4 @@ public class NetWorthDm {
     public void setTotalLiabilities(Double totalLiabilities) {
         this.totalLiabilities = totalLiabilities;
     }
-
-    @Override
-    public String toString() {
-        return "{" + " totalNetWorth='" + getTotalNetWorth() + "'" + ", totalAssets='" + getTotalAssets() + "'"
-                + ", totalLiabilities='" + getTotalLiabilities() + "'" + "}";
-    }
 }

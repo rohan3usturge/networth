@@ -5,6 +5,7 @@ import java.util.List;
 import com.networth.svc.models.AssetCategoryDm;
 import com.networth.svc.models.CalculationContext;
 import com.networth.svc.models.LiabilityCategoryDm;
+import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.NetWorthDm;
 import com.networth.svc.models.PortfolioDm;
 
@@ -23,9 +24,22 @@ public class DefaultNetWorthCalculator implements NetWorthCalculator {
 
     @Override
     public PortfolioDm calculate(String targetCurrencyCode, PortfolioDm portfolio) {
+        if (targetCurrencyCode == null) {
+            targetCurrencyCode = portfolio.getCurrencyCode();
+        }
+        if (portfolio == null) {
+            return null;
+        }
+        LineItemsContainerDm lineItems = portfolio.getLineItems();
+        if (lineItems == null) {
+            return portfolio;
+        }
         NetWorthDm netWorthDm = new NetWorthDm();
-        Double totalAssets = processAssets(targetCurrencyCode, portfolio);
-        Double totalLiabilities = processLiabilities(targetCurrencyCode, portfolio);
+        Double totalAssets;
+        Double totalLiabilities;
+        totalAssets = processAssets(targetCurrencyCode, portfolio.getCurrencyCode(), lineItems.getAssets());
+        totalLiabilities = processLiabilities(targetCurrencyCode, portfolio.getCurrencyCode(),
+                lineItems.getLiabilities());
         Double totalNetWorth = totalAssets - totalLiabilities;
         netWorthDm.setTotalAssets(totalAssets);
         netWorthDm.setTotalNetWorth(totalNetWorth);
@@ -36,16 +50,23 @@ public class DefaultNetWorthCalculator implements NetWorthCalculator {
 
     }
 
-    private Double processAssets(String targetCurrencyCode, PortfolioDm portfolio) {
-        CalculationContext<List<AssetCategoryDm>> assetContext = new CalculationContext<>(portfolio.getCurrencyCode(),
-                targetCurrencyCode, portfolio.getLineItems().getAssets());
-        return assetCalculator.calculate(assetContext);
+    private Double processLiabilities(String targetCurrencyCode, String currencyCode,
+            List<LiabilityCategoryDm> liabilities) {
+        if (liabilities == null || liabilities.isEmpty()) {
+            return 0.0;
+        }
+        CalculationContext<List<LiabilityCategoryDm>> assetContext = new CalculationContext<>(currencyCode,
+                targetCurrencyCode, liabilities);
+        return liabilityCalculator.calculate(assetContext);
     }
 
-    private Double processLiabilities(String targetCurrencyCode, PortfolioDm portfolio) {
-        CalculationContext<List<LiabilityCategoryDm>> liabilityContext = new CalculationContext<>(
-                portfolio.getCurrencyCode(), targetCurrencyCode, portfolio.getLineItems().getLiabilities());
-        return liabilityCalculator.calculate(liabilityContext);
+    private Double processAssets(String targetCurrencyCode, String currencyCode, List<AssetCategoryDm> assets) {
+        if (assets == null || assets.isEmpty()) {
+            return 0.0;
+        }
+        CalculationContext<List<AssetCategoryDm>> assetContext = new CalculationContext<>(currencyCode,
+                targetCurrencyCode, assets);
+        return assetCalculator.calculate(assetContext);
     }
 
 }

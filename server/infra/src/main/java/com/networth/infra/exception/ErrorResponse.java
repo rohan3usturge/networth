@@ -4,8 +4,6 @@ import java.util.List;
 
 public class ErrorResponse {
 
-	private String correlationId;
-
 	private List<ErrorItem> errors;
 
 	private String code;
@@ -20,14 +18,6 @@ public class ErrorResponse {
 
 	public void setResponseCode(int responseCode) {
 		this.responseCode = responseCode;
-	}
-
-	public String getCorrelationId() {
-		return correlationId;
-	}
-
-	public void setCorrelationId(String correlationId) {
-		this.correlationId = correlationId;
 	}
 
 	public List<ErrorItem> getErrors() {

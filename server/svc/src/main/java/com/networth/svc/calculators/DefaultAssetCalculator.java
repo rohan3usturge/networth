@@ -22,7 +22,16 @@ public class DefaultAssetCalculator implements AssetCalculator {
     @Override
     public Double calculate(CalculationContext<List<AssetCategoryDm>> context) {
         Double totalAssets = 0.0;
+        if (context == null || context.getPayload() == null || context.getPayload().isEmpty()) {
+            return totalAssets;
+        }
+
         for (AssetCategoryDm category : context.getPayload()) {
+
+            if (category.getItems() == null) {
+                continue;
+            }
+
             for (AssetDm item : category.getItems()) {
                 LineItemDm lineItem = item.getLineItem();
                 Double amount = currencyService.convert(lineItem.getAmount(), context.getCurrentCode(),

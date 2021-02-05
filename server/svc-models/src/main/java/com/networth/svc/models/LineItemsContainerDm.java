@@ -24,9 +24,4 @@ public class LineItemsContainerDm {
         this.liabilities = liabilities;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " assets='" + getAssets() + "'" + ", liabilities='" + getLiabilities() + "'" + "}";
-    }
-
 }

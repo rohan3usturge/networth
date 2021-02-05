@@ -23,10 +23,4 @@ public class LiabilityCategoryDm {
     public void setItems(List<LiabilityDm> items) {
         this.items = items;
     }
-
-    @Override
-    public String toString() {
-        return "{" + " meta='" + getMeta() + "'" + ", items='" + getItems() + "'" + "}";
-    }
-
 }

@@ -7,7 +7,6 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.annotation.Order;
@@ -34,17 +33,13 @@ public class GlobalExceptionHandler implements Filter {
 			throws IOException, ServletException {
 
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		try {
 			chain.doFilter(request, response);
 		} catch (Exception ex) {
-			ex.printStackTrace();
-			String correlationId = httpRequest.getHeader("x-correlation-id");
 			ErrorResponse errorResponse = errorGenerator.convert(ex);
 			ObjectMapper mapper = new ObjectMapper();
 			String json = mapper.writeValueAsString(errorResponse);
 			httpResponse.setStatus(errorResponse.getResponseCode());
-			httpResponse.setHeader("x-correlation-id", correlationId);
 			httpResponse.setContentType(MediaType.APPLICATION_JSON.toString());
 			httpResponse.getWriter().write(json);
 		}

@@ -6,12 +6,6 @@ public class LineItem {
 	private String name;
 	private Double amount;
 
-	public LineItem(String id, String name, Double amount) {
-		this.id = id;
-		this.name = name;
-		this.amount = amount;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -34,11 +28,6 @@ public class LineItem {
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
-	}
-
-	@Override
-	public String toString() {
-		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", amount='" + getAmount() + "'" + "}";
 	}
 
 }

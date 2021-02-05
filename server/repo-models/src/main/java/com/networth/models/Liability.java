@@ -6,11 +6,6 @@ public class Liability {
 
     private Double monthlyPayment;
 
-    public Liability(LineItem lineItem, Double monthlyPayment) {
-        this.lineItem = lineItem;
-        this.monthlyPayment = monthlyPayment;
-    }
-
     public LineItem getLineItem() {
         return this.lineItem;
     }
@@ -25,11 +20,6 @@ public class Liability {
 
     public void setMonthlyPayment(Double monthlyPayment) {
         this.monthlyPayment = monthlyPayment;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + " lineItem='" + getLineItem() + "'" + ", monthlyPayment='" + getMonthlyPayment() + "'" + "}";
     }
 
 }

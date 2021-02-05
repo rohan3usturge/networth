@@ -21,9 +21,4 @@ public class LineItemCategoryMetadataDm {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "{" + " name='" + getName() + "'" + "}";
-	}
-
 }

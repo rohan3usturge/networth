@@ -14,9 +14,4 @@ public class NetWorthResponseDto {
         this.portfolio = portfolio;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " portfolio='" + getPortfolio() + "'" + "}";
-    }
-
 }

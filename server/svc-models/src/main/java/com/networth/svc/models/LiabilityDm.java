@@ -22,9 +22,4 @@ public class LiabilityDm {
         this.monthlyPayment = monthlyPayment;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " lineItem='" + getLineItem() + "'" + ", monthlyPayment='" + getMonthlyPayment() + "'" + "}";
-    }
-
 }

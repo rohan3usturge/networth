@@ -8,11 +8,6 @@ public class LiabilityCategory {
 
     private List<Liability> items;
 
-    public LiabilityCategory(LineItemCategoryMetadata meta, List<Liability> items) {
-        this.meta = meta;
-        this.items = items;
-    }
-
     public LineItemCategoryMetadata getMeta() {
         return this.meta;
     }
@@ -27,11 +22,6 @@ public class LiabilityCategory {
 
     public void setItems(List<Liability> items) {
         this.items = items;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + " meta='" + getMeta() + "'" + ", items='" + getItems() + "'" + "}";
     }
 
 }

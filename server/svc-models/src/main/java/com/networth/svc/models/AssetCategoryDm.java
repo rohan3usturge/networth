@@ -24,9 +24,4 @@ public class AssetCategoryDm {
         this.items = items;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " meta='" + getMeta() + "'" + ", items='" + getItems() + "'" + "}";
-    }
-
 }

@@ -19,26 +19,10 @@ public class DefaultErrorResponseGenerator implements ErrorResponseGenerator {
 			code = apiException.getCode();
 			message = apiException.getMessage();
 			errorItems = apiException.getErrors();
-			switch (apiException.getApiExceptionType()) {
-			case VALIDATION:
+			ApiExceptionType apiExceptionType = apiException.getApiExceptionType();
+			if (apiExceptionType == ApiExceptionType.VALIDATION) {
 				responseCode = 400;
-				break;
-			case NOTFOUND:
-				responseCode = 404;
-				break;
-			case DB:
-				responseCode = 500;
-				break;
-			case UNAUTHENTICATED:
-				responseCode = 401;
-				break;
-			case UNAUTHORIZED:
-				responseCode = 403;
-				break;
-			default:
-				break;
 			}
-
 		}
 		errorResponse.setErrors(errorItems);
 		errorResponse.setCode(code);

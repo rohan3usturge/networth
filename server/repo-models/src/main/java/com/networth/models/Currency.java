@@ -11,16 +11,6 @@ public class Currency {
         this.exchangeRate = exchangeRate;
     }
 
-    public Currency currencyCode(String currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    public Currency exchangeRate(Double exchangeRate) {
-        setExchangeRate(exchangeRate);
-        return this;
-    }
-
     public String getCurrencyCode() {
         return this.currencyCode;
     }

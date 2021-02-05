@@ -32,10 +32,4 @@ public class PortfolioDm {
         this.netWorth = netWorth;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " currencyCode='" + getCurrencyCode() + "'" + ", lineItems='" + getLineItems() + "'"
-                + ", netWorth='" + getNetWorth() + "'" + "}";
-    }
-
 }

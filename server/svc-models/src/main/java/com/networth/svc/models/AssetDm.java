@@ -12,9 +12,4 @@ public class AssetDm {
         this.lineItem = lineItem;
     }
 
-    @Override
-    public String toString() {
-        return "{" + " lineItem='" + getLineItem() + "'" + "}";
-    }
-
 }
