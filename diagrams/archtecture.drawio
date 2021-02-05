@@ -1,1 +1,40 @@
-<mxfile host="app.diagrams.net" modified="2021-02-04T16:47:46.401Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36" etag="BlCKzenZOiYiOxe84Taj" version="13.0.5" type="github"><diagram id="HI1sBw7Aaw0woAUFnT-p" name="Page-1">ddHNEoIgEADgp+GuUJpns7p08tCZkU2YQZdBGq2nTwfNGOvCLN8uLD+E5c1wttzIKwrQhEZiIOxIKM12yThO8PSwj1MPtVXCU7xCqV4wYzTrQwnogkKHqJ0yIVbYtlC5wLi12Idld9RhV8Nr2EBZcb3VmxJOej3QdPULqFouneMk85mGL8XzTTrJBfZfxArCcovofNQMOejp7ZZ38etOf7Kfg1lo3Y8FY7DuPU6CD2LFGw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-02-05T04:35:11.028Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="eBgCUgEeZUnUl0-I4GbN" version="14.2.9" type="github">
+  <diagram id="HI1sBw7Aaw0woAUFnT-p" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-6" value="CLOUD" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.cloud;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="250" width="730" height="585" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Dtj8-vzoBGpzy0nNIJsu-3" target="Dtj8-vzoBGpzy0nNIJsu-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Dtj8-vzoBGpzy0nNIJsu-3" target="Dtj8-vzoBGpzy0nNIJsu-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-3" value="Application Gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="460" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Dtj8-vzoBGpzy0nNIJsu-4" target="Dtj8-vzoBGpzy0nNIJsu-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-4" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Dtj8-vzoBGpzy0nNIJsu-9" target="Dtj8-vzoBGpzy0nNIJsu-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-9" value="Future Orchestration Layer for frontends" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="600" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-11" value="Backend Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="730" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Dtj8-vzoBGpzy0nNIJsu-12" value="Web App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="730" width="150" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
