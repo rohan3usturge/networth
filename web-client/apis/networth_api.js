@@ -1,7 +1,6 @@
 import axios from "axios";
 
-//const baseUrl = `https://networth-api.azurewebsites.net/api`;
-const baseUrl = `http://localhost:8080/api`;
+const baseUrl = process.env.API_BASE_URL;
 
 const getDefaultLineItems = async () => {
   const response = await axios.get(`${baseUrl}/networth`, {

@@ -52,7 +52,7 @@ const Amount = ({ defaultValue, currency, disabled, onChange }) => {
       />
       {isError && (
         <div className="text-danger">
-          <i class="fas fa-exclamation mr-1"></i>
+          <i className="fas fa-exclamation mr-1"></i>
           <small>Please enter a valid number</small>
         </div>
       )}

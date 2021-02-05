@@ -61,7 +61,7 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
       />
       <div className="card text-white bg-primary mb-3">
         <div className="card-body">
-          <h3 class="card-title">
+          <h3 className="card-title">
             {portfolio.netWorth && (
               <span>
                 {NUMBER_UTILS.convertNumToMoney(
