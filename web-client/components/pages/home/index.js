@@ -12,7 +12,7 @@ const Home = ({ portfolio, currencies }) => {
 
 export default withAppLayout(Home);
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const locale = context.locale;
   const lineItems = await NETWORTH_API.getDefaultLineItems(locale);
   const currencyCode = "CAD";

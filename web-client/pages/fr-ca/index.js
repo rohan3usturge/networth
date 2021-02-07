@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from "../../components/pages/home";
+export { default, getStaticProps } from "../../components/pages/home";
