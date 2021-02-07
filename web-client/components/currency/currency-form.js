@@ -1,7 +1,8 @@
+import { withTranslation } from "react-i18next";
 import Select from "react-select";
 import { CURRENCY_UTILS } from "./../utils";
 
-const CurrencyForm = ({ currencies, onChange, selectedCurrency }) => {
+const Wrapper = ({ currencies, onChange, selectedCurrency, t }) => {
   const handleChange = ({ value }) => {
     if (onChange) {
       onChange(value);
@@ -35,7 +36,7 @@ const CurrencyForm = ({ currencies, onChange, selectedCurrency }) => {
       <div className="card-body">
         <div className="form-group">
           <label className="h6 mb-2" htmlFor="currency-select">
-            CURRENCY
+            {t("currency")}
           </label>
           <Select
             id="currency-seletor"
@@ -48,5 +49,7 @@ const CurrencyForm = ({ currencies, onChange, selectedCurrency }) => {
     </div>
   );
 };
+
+const CurrencyForm = withTranslation()(Wrapper);
 
 export { CurrencyForm };

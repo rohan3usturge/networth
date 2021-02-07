@@ -8,12 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
-    "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
+    "@fortawesome/fontawesome-free": "5.15.2",
+    "axios": "0.21.1",
+    "bootstrap": "4.6.0",
+    "i18next": "19.8.7",
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-select": "^4.0.2"
+    "react-i18next": "11.8.5",
+    "react-select": "4.0.2"
+  },
+  "devDependencies": {
+    "uuid": "^8.3.2"
   }
 }

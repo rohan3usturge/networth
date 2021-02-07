@@ -9,7 +9,6 @@ import com.networth.dto.NetWorthResponseDto;
 import com.networth.models.Currency;
 import com.networth.svc.CurrencyService;
 import com.networth.svc.NetWorthService;
-import com.networth.svc.models.LineItemsContainerDm;
 import com.networth.svc.models.PortfolioDm;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +27,6 @@ public class NetWorthController {
 	public NetWorthController(NetWorthService nwService, CurrencyService currencyService) {
 		this.nwService = nwService;
 		this.currencyService = currencyService;
-	}
-
-	@GetMapping()
-	public LineItemsContainerDm getLineItemsContainer() {
-		return this.nwService.getLineItemsContainer();
 	}
 
 	@GetMapping(path = "/currencies")

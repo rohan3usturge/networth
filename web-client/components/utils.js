@@ -2,7 +2,7 @@ const convertStrToNum = (str) => {
   return Number(String(str).replace(/[^0-9.-]+/g, ""));
 };
 
-const convertNumToMoney = (currVal, currency) => {
+const convertNumToMoney = (currVal, currency, locale) => {
   const options = {
     //maximumFractionDigits: 2,
     currency: currency,
@@ -10,7 +10,7 @@ const convertNumToMoney = (currVal, currency) => {
     currencyDisplay: "symbol",
   };
   return currVal || currVal === 0
-    ? convertStrToNum(currVal).toLocaleString(undefined, options)
+    ? convertStrToNum(currVal).toLocaleString(locale, options)
     : "";
 };
 

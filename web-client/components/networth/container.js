@@ -4,8 +4,10 @@ import { LiabilityCategoryList } from "./liability-category-list";
 import { useState } from "react";
 import { NETWORTH_API } from "../../apis/networth_api";
 import { NUMBER_UTILS } from "../utils";
+import { withTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
-const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
+const Wrapper = ({ defaultPortfolio, currencies, t }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,7 +23,7 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
       targetCurrencyCode,
     };
     const nw = await NETWORTH_API.getNetWorth(nwRequest);
-    await timeout(500);
+    await timeout(300);
     setIsLoading(false);
     setPortfolio(nw.portfolio);
   };
@@ -66,14 +68,15 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
               <span>
                 {NUMBER_UTILS.convertNumToMoney(
                   portfolio.netWorth.totalNetWorth,
-                  portfolio.currencyCode
+                  portfolio.currencyCode,
+                  useRouter().locale
                 )}
               </span>
             )}
           </h3>
           <span className="card-text">
             <i className="fas fa-balance-scale mr-2"></i>
-            TOTAL NET WORTH
+            {t("totalNetWorth")}
           </span>
         </div>
       </div>
@@ -96,5 +99,7 @@ const NetWorthContainer = ({ defaultPortfolio, currencies }) => {
     </>
   );
 };
+
+const NetWorthContainer = withTranslation()(Wrapper);
 
 export { NetWorthContainer };
