@@ -1,13 +1,9 @@
 import { LiablityCategory } from "./liability-category";
 import { NUMBER_UTILS } from "./../utils";
+import { useRouter } from "next/router";
+import { withTranslation } from "react-i18next";
 
-const LiabilityCategoryList = ({
-  categories,
-  onChange,
-  disabled,
-  currency,
-  total,
-}) => {
+const Wrapper = ({ categories, onChange, disabled, currency, total, t }) => {
   const handleChange = (changedCategory) => {
     const changed = categories.map((category) => {
       if (category.meta.id === changedCategory.meta.id) {
@@ -26,11 +22,15 @@ const LiabilityCategoryList = ({
       <div className="card mb-3">
         <div className="card-header bg-danger text-white">
           <h4 className="card-title">
-            {NUMBER_UTILS.convertNumToMoney(total, currency)}
+            {NUMBER_UTILS.convertNumToMoney(
+              total,
+              currency,
+              useRouter().locale
+            )}
           </h4>
           <span className="card-text">
             <i className="fas fa-file-invoice mr-2"></i>
-            LIABILITIES
+            {t("liabilities")}
           </span>
         </div>
         <div className="card-body">
@@ -50,5 +50,7 @@ const LiabilityCategoryList = ({
     </>
   );
 };
+
+const LiabilityCategoryList = withTranslation()(Wrapper);
 
 export { LiabilityCategoryList };

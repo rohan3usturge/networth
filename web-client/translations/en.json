@@ -1,0 +1,7 @@
+{
+  "assets": "Assets",
+  "liabilities": "Liabilities",
+  "totalNetWorth": "Total Net Worth",
+  "monthlyPayment": "Monthly Payment",
+  "currency": "Currency"
+}

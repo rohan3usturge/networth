@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
 import { NUMBER_UTILS } from "../utils";
+import { useRouter } from "next/router";
 
 const Amount = ({ defaultValue, currency, disabled, onChange }) => {
-  const initialValue = NUMBER_UTILS.convertNumToMoney(defaultValue, currency);
+  const router = useRouter();
+  const locale = router.locale;
+  const initialValue = NUMBER_UTILS.convertNumToMoney(
+    defaultValue,
+    currency,
+    locale
+  );
   const [value, setValue] = useState(initialValue);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    setValue(NUMBER_UTILS.convertNumToMoney(defaultValue, currency));
+    setValue(NUMBER_UTILS.convertNumToMoney(defaultValue, currency, locale));
   }, [defaultValue, currency]);
 
   const handleBlur = (e) => {
     const currVal = e.target.value;
-    const newVal = NUMBER_UTILS.convertNumToMoney(currVal, currency);
+    const newVal = NUMBER_UTILS.convertNumToMoney(currVal, currency, locale);
     setValue(newVal);
     if (!isError && currVal != defaultValue && onChange) {
       onChange(currVal);

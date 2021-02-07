@@ -1,6 +1,7 @@
+import { withTranslation } from "react-i18next";
 import { Liability } from "./liability";
 
-const LiablityCategory = ({ category, onChange, disabled, currency }) => {
+const Wrapper = ({ category, onChange, disabled, currency, t }) => {
   const handleChange = (changedItem) => {
     const changed = { ...category };
     const newItems = category.items.map((item) => {
@@ -20,7 +21,7 @@ const LiablityCategory = ({ category, onChange, disabled, currency }) => {
       <thead>
         <tr>
           <th scope="col">{category.meta.name}</th>
-          <th>Monthly Payment</th>
+          <th>{t("monthlyPayment")}</th>
           <th></th>
         </tr>
       </thead>
@@ -40,5 +41,7 @@ const LiablityCategory = ({ category, onChange, disabled, currency }) => {
     </table>
   );
 };
+
+const LiablityCategory = withTranslation()(Wrapper);
 
 export { LiablityCategory };

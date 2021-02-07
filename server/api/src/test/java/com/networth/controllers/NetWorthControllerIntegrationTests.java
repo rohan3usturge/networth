@@ -33,11 +33,6 @@ public class NetWorthControllerIntegrationTests {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnLineItemsCorrectly() throws Exception {
-        this.mockMvc.perform(get("/networth")).andExpect(status().isOk());
-    }
-
-    @Test
     public void shouldReturnCurrenciesCorrectly() throws Exception {
         MvcResult returned = this.mockMvc.perform(get("/networth/currencies")).andExpect(status().isOk()).andReturn();
         String json = returned.getResponse().getContentAsString();

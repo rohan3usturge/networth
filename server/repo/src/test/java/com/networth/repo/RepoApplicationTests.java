@@ -13,14 +13,9 @@ class RepoApplicationTests {
 	@Autowired
 	private CurrencyRepository currencyRepo;
 
-	@Autowired
-	private NetWorthRepository nwRepo;
-
 	@Test
 	void contextLoads() {
 		assertNotNull(currencyRepo);
-		assertNotNull(nwRepo);
-		assertEquals(true, nwRepo instanceof DefaultNetWorthRepository);
 		assertEquals(true, currencyRepo instanceof MemoryBasedCurrencyRepository);
 	}
 
