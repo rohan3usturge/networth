@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyForm should render properly and match snapshot 1`] = `
+<div
+  className="card mb-3"
+>
+  <div
+    className="card-body"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="h6 mb-2"
+        htmlFor="currency-select"
+      >
+        Currency
+      </label>
+      <StateManager
+        defaultInputValue=""
+        defaultMenuIsOpen={false}
+        defaultValue={
+          Object {
+            "label": <span
+              id="option-CAD"
+            >
+              <i
+                className="mr-2 fa fa-dollar-sign"
+              />
+              CAD
+               - 
+              Canadian Dollar
+            </span>,
+            "value": "CAD",
+          }
+        }
+        id="currency-seletor"
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": <span
+                id="option-CAD"
+              >
+                <i
+                  className="mr-2 fa fa-dollar-sign"
+                />
+                CAD
+                 - 
+                Canadian Dollar
+              </span>,
+              "value": "CAD",
+            },
+            Object {
+              "label": <span
+                id="option-AUS"
+              >
+                <i
+                  className="mr-2 fa "
+                />
+                AUS
+                 - 
+                
+              </span>,
+              "value": "AUS",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -52,4 +52,4 @@ const Wrapper = ({ currencies, onChange, selectedCurrency, t }) => {
 
 const CurrencyForm = withTranslation()(Wrapper);
 
-export { CurrencyForm };
+export { CurrencyForm, Wrapper };

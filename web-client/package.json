@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:ci": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
@@ -19,6 +22,13 @@
     "react-select": "4.0.2"
   },
   "devDependencies": {
-    "uuid": "^8.3.2"
+    "@babel/preset-env": "7.12.13",
+    "@babel/preset-react": "7.12.13",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.4.1",
+    "babel-jest": "26.6.3",
+    "enzyme": "3.11.0",
+    "enzyme-to-json": "^3.6.1",
+    "jest": "26.6.3",
+    "uuid": "8.3.2"
   }
 }
