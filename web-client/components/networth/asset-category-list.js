@@ -49,4 +49,4 @@ const Wrapper = ({ categories, onChange, disabled, total, currency, t }) => {
 
 const AssetCategoryList = withTranslation()(Wrapper);
 
-export { AssetCategoryList };
+export { AssetCategoryList, Wrapper };

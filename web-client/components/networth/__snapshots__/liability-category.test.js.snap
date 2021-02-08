@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AssetCategory should render properly and match snapshot 1`] = `
+<Wrapper
+  category={
+    Object {
+      "items": Array [],
+      "meta": Object {},
+    }
+  }
+  currency="CAD"
+  disabled={true}
+  i18n={Object {}}
+  onChange={[Function]}
+  t={[Function]}
+  tReady={false}
+/>
+`;

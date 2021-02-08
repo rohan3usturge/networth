@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NetWorthContainer should render properly and match snapshot 1`] = `
+<Fragment>
+  <withI18nextTranslation(Wrapper)
+    onChange={[Function]}
+    selectedCurrency="CAD"
+  />
+  <div
+    className="card text-white bg-primary mb-3"
+  >
+    <div
+      className="card-body"
+    >
+      <h3
+        className="card-title"
+      >
+        <span />
+      </h3>
+      <span
+        className="card-text"
+      >
+        <i
+          className="fas fa-balance-scale mr-2"
+        />
+        totalNetWorth
+      </span>
+    </div>
+  </div>
+  <withI18nextTranslation(Wrapper)
+    categories={Array []}
+    currency="CAD"
+    disabled={false}
+    onChange={[Function]}
+  />
+  <withI18nextTranslation(Wrapper)
+    categories={Array []}
+    currency="CAD"
+    disabled={false}
+    onChange={[Function]}
+  />
+</Fragment>
+`;

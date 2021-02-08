@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Amount should render properly and match snapshot 1`] = `
+<div
+  className="flex-column"
+>
+  <input
+    className="form-control money-input"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+    value="CA$3.00"
+  />
+</div>
+`;

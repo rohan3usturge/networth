@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AssetCategory should render properly and match snapshot 1`] = `
+<table
+  className="table table-borderless table-sm"
+>
+  <thead>
+    <tr>
+      <th
+        scope="col"
+      />
+      <th />
+    </tr>
+  </thead>
+  <tbody />
+</table>
+`;

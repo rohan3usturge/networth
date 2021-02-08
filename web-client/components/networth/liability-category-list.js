@@ -53,4 +53,4 @@ const Wrapper = ({ categories, onChange, disabled, currency, total, t }) => {
 
 const LiabilityCategoryList = withTranslation()(Wrapper);
 
-export { LiabilityCategoryList };
+export { LiabilityCategoryList, Wrapper };

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LiabilityCategoryList should render properly and match snapshot 1`] = `
+<Fragment>
+  <div
+    className="card mb-3"
+  >
+    <div
+      className="card-header bg-danger text-white"
+    >
+      <h4
+        className="card-title"
+      >
+        CA$2,323.02
+      </h4>
+      <span
+        className="card-text"
+      >
+        <i
+          className="fas fa-file-invoice mr-2"
+        />
+        Currency
+      </span>
+    </div>
+    <div
+      className="card-body"
+    />
+  </div>
+</Fragment>
+`;

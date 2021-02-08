@@ -102,4 +102,4 @@ const Wrapper = ({ defaultPortfolio, currencies, t }) => {
 
 const NetWorthContainer = withTranslation()(Wrapper);
 
-export { NetWorthContainer };
+export { NetWorthContainer, Wrapper };

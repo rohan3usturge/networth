@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Liability should render properly and match snapshot 1`] = `
+<tr>
+  <td />
+  <td />
+  <td>
+    <Amount
+      className="form-control"
+      currency="CAD"
+      disabled={true}
+      onChange={[Function]}
+    />
+  </td>
+</tr>
+`;
