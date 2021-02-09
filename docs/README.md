@@ -11,13 +11,14 @@ https://networth.azurefd.net/
 
 # Tech Stack
 
-| **Component**     | **TechStack**        |
-| ----------------- | -------------------- |
-| _Frontend_        | NextJS               |
-| _Backend_         | Spring Boot Rest Api |
-| _GateWay_         | Front Door           |
-| _CICD_            | GitHub Actions       |
-| _Cloud Providers_ | Vercel and Azure     |
+| **Component**     | **TechStack**        | ADR                                                  |
+|-------------------|----------------------|------------------------------------------------------|
+| _Frontend_        | NextJS               | [ ADR Record ](client.md)                            |
+| _Backend_         | Spring Boot Rest Api | [ ADR Record ](server.md)                            |
+| _GateWay_         | Front Door           | One of the best application layer gateways available |
+| _CICD_            | GitHub Actions       | Integrates smoothly with github repo                 |
+| _Cloud Providers_ | Vercel and Azure     | Pricing and ease of deployment                       |
+
 
 # Features
 
