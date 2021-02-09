@@ -11,6 +11,26 @@ const Header = ({ locale }) => {
       <Head>
         <title>Net Worth Calculator</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="keywords"
+          content="networth, assets, liabilities, calculator"
+        />
+        <meta
+          name="description"
+          content="Calculates Networth based on assets, liabilities"
+        />
+        <meta name="subject" content="NetWorth Calculator" />
+        <meta name="copyright" content="Intuit" />
+        <meta name="language" content="en ,fr" />
+        <meta name="robots" content="index,follow" />
+        <meta name="abstract" content="" />
+        <meta name="topic" content="" />
+        <meta name="summary" content="" />
+        <meta name="Classification" content="Business" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        <meta name="revisit-after" content="1 days" />
       </Head>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
