@@ -41,10 +41,12 @@ https://networth.azurefd.net/
 | CICD                          | Vercel Pipeline                       | :heavy_check_mark:      | Github Actions              | :heavy_check_mark:          |
 | Cred Free                     |                                       | :heavy_check_mark:      |                             | :heavy_check_mark:          |
 | Cors Free                     |                                       | :heavy_check_mark:      |                             | :heavy_check_mark:          |
-| Cloud Native                  | Vercel Cloud                          | :heavy_check_mark:      | Microsoft Azure             | :heavy_check_mark:          |
+| Cloud Native and 12 Factor    | Vercel Cloud                          | :heavy_check_mark:      | Microsoft Azure             | :heavy_check_mark:          |
+| Documentation                 | Docsify                               | :heavy_check_mark:      | Docsify and Swagger         | :heavy_check_mark:          |
 | Accessibility                 |                                       | :construction_worker:   |                             | NA                          |
 | Load Testing                  |                                       | :construction_worker:   |                             | :construction_worker:       |
 | Instrumentation               |                                       | :construction_worker:   |                             | :construction_worker:       |
+
 
 
 ## System Topology
