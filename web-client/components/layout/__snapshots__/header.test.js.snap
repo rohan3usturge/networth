@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render properly and match snapshot 1`] = `
+<div>
+  <Head>
+    <title>
+      Net Worth Calculator
+    </title>
+    <link
+      href="/favicon.ico"
+      rel="icon"
+    />
+  </Head>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <a
+      className="navbar-brand"
+      href="#"
+    >
+      <span
+        className="h4"
+      >
+        NET WORTH 
+        <em>
+          calc
+        </em>
+      </span>
+    </a>
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-testid="menuButton"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="navbar-collapse collapse"
+      data-testid="navbarSupportedContent"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li
+          className="nav-item "
+        >
+          <Link
+            href="/"
+            locale="en-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              English
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item "
+        >
+          <Link
+            href="/"
+            locale="fr-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              français
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            target="_blank"
+          >
+            Docs
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Header should render properly and match snapshot for english 1`] = `
+<div>
+  <Head>
+    <title>
+      Net Worth Calculator
+    </title>
+    <link
+      href="/favicon.ico"
+      rel="icon"
+    />
+  </Head>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <a
+      className="navbar-brand"
+      href="#"
+    >
+      <span
+        className="h4"
+      >
+        NET WORTH 
+        <em>
+          calc
+        </em>
+      </span>
+    </a>
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-testid="menuButton"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="navbar-collapse collapse"
+      data-testid="navbarSupportedContent"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li
+          className="nav-item active"
+        >
+          <Link
+            href="/"
+            locale="en-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              English
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item "
+        >
+          <Link
+            href="/"
+            locale="fr-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              français
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            target="_blank"
+          >
+            Docs
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Header should render properly and match snapshot for french 1`] = `
+<div>
+  <Head>
+    <title>
+      Net Worth Calculator
+    </title>
+    <link
+      href="/favicon.ico"
+      rel="icon"
+    />
+  </Head>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <a
+      className="navbar-brand"
+      href="#"
+    >
+      <span
+        className="h4"
+      >
+        NET WORTH 
+        <em>
+          calc
+        </em>
+      </span>
+    </a>
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-testid="menuButton"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="navbar-collapse collapse"
+      data-testid="navbarSupportedContent"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav me-auto mb-2 mb-lg-0"
+      >
+        <li
+          className="nav-item "
+        >
+          <Link
+            href="/"
+            locale="en-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              English
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item active"
+        >
+          <Link
+            href="/"
+            locale="fr-ca"
+          >
+            <a
+              className="nav-link"
+            >
+              français
+            </a>
+          </Link>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            target="_blank"
+          >
+            Docs
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

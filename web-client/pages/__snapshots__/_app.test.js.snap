@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render properly and match snapshot 1`] = `
+<Component
+  locale="en-ca"
+/>
+`;

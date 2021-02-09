@@ -2,18 +2,16 @@ import { NETWORTH_API } from "../../../apis/networth_api";
 import withAppLayout from "../../layout/app-layout";
 import { NetWorthContainer } from "../../networth/container";
 
-const Home = ({ portfolio, currencies }) => {
-  return (
-    <div>
-      <NetWorthContainer currencies={currencies} defaultPortfolio={portfolio} />
-    </div>
-  );
-};
+const Home = ({ portfolio, currencies }) => (
+  <div>
+    <NetWorthContainer currencies={currencies} defaultPortfolio={portfolio} />
+  </div>
+);
 
 export default withAppLayout(Home);
 
 export async function getStaticProps(context) {
-  const locale = context.locale;
+  const locale = context && context.locale;
   const lineItems = await NETWORTH_API.getDefaultLineItems(locale);
   const currencyCode = "CAD";
   const portfolio = {

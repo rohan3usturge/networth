@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLayout should render properly and match snapshot 1`] = `
+<section
+  className="bg-light"
+>
+  <Header />
+  <div
+    className="mt-5"
+  />
+  <main
+    className="container-md pl-1 pr-1"
+  >
+    <div>
+      <Component />
+    </div>
+  </main>
+  <Footer />
+</section>
+`;

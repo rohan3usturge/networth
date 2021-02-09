@@ -3,17 +3,13 @@ import { AssetCategoryList } from "./asset-category-list";
 import { LiabilityCategoryList } from "./liability-category-list";
 import { useState } from "react";
 import { NETWORTH_API } from "../../apis/networth_api";
-import { NUMBER_UTILS } from "../utils";
+import { NUMBER_UTILS, TIME_UTILS } from "../utils";
 import { withTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 
 const Wrapper = ({ defaultPortfolio, currencies, t }) => {
   const [portfolio, setPortfolio] = useState(defaultPortfolio || {});
   const [isLoading, setIsLoading] = useState(false);
-
-  function timeout(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
 
   const fetchNetWorth = async (currentPortfolio, targetCurrencyCode) => {
     setIsLoading(true);
@@ -23,7 +19,7 @@ const Wrapper = ({ defaultPortfolio, currencies, t }) => {
       targetCurrencyCode,
     };
     const nw = await NETWORTH_API.getNetWorth(nwRequest);
-    await timeout(300);
+    await TIME_UTILS.timeout(300);
     setIsLoading(false);
     setPortfolio(nw.portfolio);
   };

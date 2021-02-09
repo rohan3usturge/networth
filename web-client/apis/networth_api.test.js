@@ -19,7 +19,6 @@ jest.mock(
   { virtual: true }
 );
 
-/** @test {Title Component} */
 describe("NetWorthApi.getDefaultLineItems", () => {
   it("should return english for undefine locale", async () => {
     const lineItems = await NETWORTH_API.getDefaultLineItems();

@@ -27,6 +27,12 @@ const currencyCodeToFaClass = {
   CHF: { class: "", label: "Swiss Franc" },
 };
 
+const timeout = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+export const TIME_UTILS = { timeout };
+
 export const CURRENCY_UTILS = { currencyCodeToFaClass };
 
 export const NUMBER_UTILS = {

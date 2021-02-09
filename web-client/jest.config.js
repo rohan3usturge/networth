@@ -6,6 +6,10 @@ module.exports = {
     "!**/tests/**",
     "!**/coverage/**",
     "!jest.config.js",
+    "!babel.config.js",
+    "!create-data.js",
+    "!i18n.js",
+    "!next.config.js",
   ],
   coverageThreshold: {
     global: {

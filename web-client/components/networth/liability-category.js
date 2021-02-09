@@ -44,4 +44,4 @@ const Wrapper = ({ category, onChange, disabled, currency, t }) => {
 
 const LiablityCategory = withTranslation()(Wrapper);
 
-export { LiablityCategory };
+export { LiablityCategory, Wrapper };

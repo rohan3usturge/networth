@@ -1,8 +1,3 @@
-const Footer = () => (
-  <footer>
-    <title>Net Worth Calculator</title>
-    <link rel="icon" href="/favicon.ico" />
-  </footer>
-);
+const Footer = () => <footer></footer>;
 
 export { Footer };

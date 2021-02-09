@@ -21,8 +21,7 @@ const Header = ({ locale }) => {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
+          data-testid="menuButton"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -33,6 +32,7 @@ const Header = ({ locale }) => {
 
         <div
           className={`navbar-collapse ${!isMenuVisible ? "collapse" : ""}`}
+          data-testid="navbarSupportedContent"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
