@@ -5,7 +5,10 @@ Calculates NetWorth based on Assets and Liabilities.
 # Try Out
 
 Application URL
-https://networth.azurefd.net/
+https://networth.rohanusturge.com/
+
+Api URL:
+https://networth-api.azurewebsites.net/api/swagger-ui/
 
 
 
