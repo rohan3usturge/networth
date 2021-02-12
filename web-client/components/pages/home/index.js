@@ -3,9 +3,7 @@ import withAppLayout from "../../layout/app-layout";
 import { NetWorthContainer } from "../../networth/container";
 
 const Home = ({ portfolio, currencies }) => (
-  <div>
-    <NetWorthContainer currencies={currencies} defaultPortfolio={portfolio} />
-  </div>
+  <NetWorthContainer currencies={currencies} defaultPortfolio={portfolio} />
 );
 
 export default withAppLayout(Home);
